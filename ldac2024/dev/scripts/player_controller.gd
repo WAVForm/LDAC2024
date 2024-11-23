@@ -11,7 +11,7 @@ var current_speed = 0.0
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		turn_pov(event.relative)
+		turn_pov(-event.relative)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -47,10 +47,7 @@ func move():
 	
 func turn_pov(input_dir:Vector2):
 	#rotation.x is up n down, rotation.y is left n right
-	print(pov.rotation_degrees.x)
-	if pov.rotation_degrees.x > 90 || pov.rotation_degrees.x < -90:
-		print("CAN'T")
-	else:
-		pov.rotation_degrees.x += -input_dir.y * WRAPPER.CAMERA_SENSITIVITY
-		pov.rotation_degrees.y += -input_dir.x * WRAPPER.CAMERA_SENSITIVITY
+	if not ((pov.rotation_degrees.x > 90  && input_dir.y > 0) || (pov.rotation_degrees.x < -90 && input_dir.y < 0)):
+		pov.rotation_degrees.x += input_dir.y * WRAPPER.CAMERA_SENSITIVITY
+		pov.rotation_degrees.y += input_dir.x * WRAPPER.CAMERA_SENSITIVITY
 		
