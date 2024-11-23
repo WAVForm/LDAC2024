@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dw4n5e60sue1h"
-path="res://.godot/imported/level_blockout.fbx-8bb5645b4ae1f3685abb07f3668afa27.scn"
+uid="uid://c2d36xoay4rhc"
+path="res://.godot/imported/boxtest_texture.fbx-0d56b98a2706027f5de5c3b5eb3bf266.scn"
 
 [deps]
 
-source_file="res://models/level_blockout.fbx"
-dest_files=["res://.godot/imported/level_blockout.fbx-8bb5645b4ae1f3685abb07f3668afa27.scn"]
+source_file="res://models/boxtest_texture.fbx"
+dest_files=["res://.godot/imported/boxtest_texture.fbx-0d56b98a2706027f5de5c3b5eb3bf266.scn"]
 
 [params]
 

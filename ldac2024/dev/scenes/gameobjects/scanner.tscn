@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b85yrivup1c32"]
+
+[ext_resource type="Script" path="res://dev/scripts/scanner.gd" id="1_polif"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rhsdo"]
+size = Vector3(0.1, 0.02, 0.25)
+
+[node name="scanner" type="Node3D"]
+script = ExtResource("1_polif")
+
+[node name="model" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_rhsdo")
+
+[node name="laser" type="SpotLight3D" parent="."]
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.1
+spot_range = 0.5
+spot_angle = 30.0

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bqryoln0hlt07"]
 
 [ext_resource type="Script" path="res://dev/scripts/test_scene.gd" id="1_0lfjr"]
-[ext_resource type="PackedScene" uid="uid://c8ss7ie85eom7" path="res://dev/scenes/player.tscn" id="2_o1kdk"]
-[ext_resource type="PackedScene" uid="uid://b5qkk5jvj1oal" path="res://dev/scenes/terminal.tscn" id="3_7tqby"]
+[ext_resource type="PackedScene" uid="uid://c8ss7ie85eom7" path="res://dev/scenes/gameobjects/player.tscn" id="2_o1kdk"]
+[ext_resource type="PackedScene" uid="uid://b5qkk5jvj1oal" path="res://dev/scenes/gameobjects/terminal.tscn" id="3_7tqby"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ayy48"]
 size = Vector2(5, 5)
