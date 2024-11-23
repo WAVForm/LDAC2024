@@ -11,4 +11,4 @@ func _ready() -> void:
 func _input(event):
 	if event is InputEventKey and event.keycode == KEY_ESCAPE and (input_limit_timer.is_stopped() || input_limit_timer.time_left <= 0):
 		input_limit_timer.start(0.25)
-		WRAPPER.toggle_ui(WRAPPER.UIS.PAUSE)
+		WRAPPER.toggle_ui_of_id(WRAPPER.UIS.PAUSE)

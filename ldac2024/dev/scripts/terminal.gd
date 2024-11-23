@@ -10,7 +10,6 @@ func _process(delta: float) -> void:
 
 func select(button_index):
 	if button_index == 1:
-		print("left click")
-		WRAPPER.toggle_ui(WRAPPER.UIS.TERMINAL)
+		WRAPPER.add_sub_ui(WRAPPER.UIS.TERMINAL)
 	elif button_index == 2:
 		print("right click")
