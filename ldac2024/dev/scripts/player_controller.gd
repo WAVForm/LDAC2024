@@ -1,18 +1,18 @@
 extends CharacterBody3D
 
-@onready var pov: Node3D = $pov
+@onready var pov:Node3D = $pov
 
 const SPEED_GAIN = 0.1
 const SPEED_LOSS = 0.25
 const MAX_SPEED = 2.0
 const JUMP_POWER = 2.0
 
-
 var current_speed = 0.0
-var current_tool = null
+@onready var ray = pov.get_node("selection_ray") as RayCast3D
+var scan_timer:Timer
+var can_scan = false
 
-func _ready() -> void:
-	current_tool = $pov/scanner
+var packages:Array
 
 func _input(event):
 	if WRAPPER.is_ui_open() == true:
@@ -21,17 +21,35 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		turn_pov(-event.relative)
 		
-	if event is InputEventMouseButton:
+	elif event is InputEventMouseButton:
 		if event.pressed:
-			if current_tool != null:
-				current_tool.using = true
-			else:
-				var r = pov.get_node("selection_ray") as RayCast3D #attempt selecting interactable
-				if r.is_colliding():
-					r.get_collider().select(event.button_index)
+			scan_timer.start(0.5)
+			pov.using = true
 		else:
-			if current_tool != null:
-				current_tool.using = false
+			pov.using = false
+			can_scan = false
+	
+	elif event.is_action_pressed("use"):
+		var r = pov.get_node("selection_ray") as RayCast3D #attempt selecting interactable
+		if r.is_colliding() and r.get_collider().has_method("use"):
+			var returned = r.get_collider().use()
+			if returned != null and returned is Scannable:
+				place_in_inventory(returned)
+			
+
+func _ready():
+	scan_timer = Timer.new()
+	scan_timer.one_shot = true
+	add_child(scan_timer)
+	scan_timer.timeout.connect(func(): can_scan = true)
+	
+
+func _process(_delta):
+	if can_scan and ray.is_colliding() and ray.get_collider().has_method("scan"):
+		print(ray.get_collider().scan())
+		var e:= InputEventMouseButton.new()
+		e.pressed = false
+		_input(e)
 
 func _physics_process(delta: float) -> void:
 	if WRAPPER.is_ui_open() == true:
@@ -74,3 +92,12 @@ func turn_pov(input_dir:Vector2):
 	if not ((pov.rotation_degrees.x > 90  && input_dir.y > 0) || (pov.rotation_degrees.x < -90 && input_dir.y < 0)):
 		pov.rotation_degrees.x += input_dir.y * WRAPPER.CAMERA_SENSITIVITY
 		pov.rotation_degrees.y += input_dir.x * WRAPPER.CAMERA_SENSITIVITY
+		
+func place_in_inventory(p):
+	packages.append(p)
+	p.visible = false
+	
+func take_out_inventory(p):
+	p.position = pov.position
+	p.visible = true
+	packages.erase(p)
