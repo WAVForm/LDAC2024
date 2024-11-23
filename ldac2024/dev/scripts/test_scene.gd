@@ -6,7 +6,7 @@ var input_limit_timer = Timer.new()
 func _ready() -> void:
 	input_limit_timer.one_shot = true
 	add_child(input_limit_timer)
-	WRAPPER.add_sub_ui(WRAPPER.UIS.PLAYER)
+	WRAPPER.add_nec_ui(WRAPPER.UIS.PLAYER)
 	pass # Replace with function body.
 
 func _input(event):

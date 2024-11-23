@@ -34,12 +34,13 @@ func change_to_scene(scene_id:SCENES):
 
 
 #UIs
+var necessary_uis:Array= []
 var ui_node_list:Array = []
 var ui_state_list:Array = []
 enum UIS {PAUSE, TERMINAL, PLAYER}
 var pause_ui = load("res://dev/scenes/uis/pause_ui.tscn")
 var terminal_ui = load("res://dev/scenes/uis/terminal_ui.tscn")
-var player_ui = load("")
+var player_ui = load("res://dev/scenes/uis/player_ui.tscn")
 
 func reset_ui():
 	while not ui_node_list.is_empty():
@@ -48,6 +49,12 @@ func reset_ui():
 func switch_current_ui(ui_id:UIS):
 	prev_sub_ui()
 	add_sub_ui(ui_id)
+
+func add_nec_ui(ui_id:UIS):
+	match ui_id:
+		UIS.PLAYER:
+			necessary_uis.append(player_ui.instantiate())
+	add_child(necessary_uis.back())
 
 func add_sub_ui(ui_id:UIS):
 	match ui_id:
