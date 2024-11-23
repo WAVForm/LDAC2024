@@ -9,6 +9,10 @@ const JUMP_POWER = 2.0
 
 
 var current_speed = 0.0
+var current_tool = null
+
+func _ready() -> void:
+	current_tool = $pov/scanner
 
 func _input(event):
 	if WRAPPER.is_ui_open() == true:
@@ -16,10 +20,18 @@ func _input(event):
 	
 	if event is InputEventMouseMotion:
 		turn_pov(-event.relative)
-	if event is InputEventMouseButton and event.pressed:
-		var r = pov.get_node("selection_ray") as RayCast3D
-		if r.is_colliding():
-			r.get_collider().select(event.button_index)
+		
+	if event is InputEventMouseButton:
+		if event.pressed:
+			if current_tool != null:
+				current_tool.using = true
+			else:
+				var r = pov.get_node("selection_ray") as RayCast3D #attempt selecting interactable
+				if r.is_colliding():
+					r.get_collider().select(event.button_index)
+		else:
+			if current_tool != null:
+				current_tool.using = false
 
 func _physics_process(delta: float) -> void:
 	if WRAPPER.is_ui_open() == true:

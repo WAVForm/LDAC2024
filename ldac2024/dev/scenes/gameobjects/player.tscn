@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8ss7ie85eom7"]
+[gd_scene load_steps=5 format=3 uid="uid://c8ss7ie85eom7"]
 
 [ext_resource type="Script" path="res://dev/scripts/player_controller.gd" id="1_roadn"]
+[ext_resource type="PackedScene" uid="uid://b85yrivup1c32" path="res://dev/scenes/gameobjects/scanner.tscn" id="2_p5kjo"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_uxkk7"]
 radius = 0.1
@@ -28,3 +29,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 target_position = Vector3(0, 0, -0.5)
 collide_with_areas = true
 debug_shape_thickness = 5
+
+[node name="scanner" parent="pov" instance=ExtResource("2_p5kjo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, -0.1, -0.25)
