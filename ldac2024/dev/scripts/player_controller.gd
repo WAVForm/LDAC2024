@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@onready var pov: Node3D = $pov
+@onready var pov:Node3D = $pov
 
 const SPEED_GAIN = 0.1
 const SPEED_LOSS = 0.25
@@ -9,10 +9,6 @@ const JUMP_POWER = 2.0
 
 
 var current_speed = 0.0
-var current_tool = null
-
-func _ready() -> void:
-	current_tool = $pov/scanner
 
 func _input(event):
 	if WRAPPER.is_ui_open() == true:
@@ -21,17 +17,17 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		turn_pov(-event.relative)
 		
-	if event is InputEventMouseButton:
+	elif event is InputEventMouseButton:
 		if event.pressed:
-			if current_tool != null:
-				current_tool.using = true
-			else:
-				var r = pov.get_node("selection_ray") as RayCast3D #attempt selecting interactable
-				if r.is_colliding():
-					r.get_collider().select(event.button_index)
+			pov.using = true
 		else:
-			if current_tool != null:
-				current_tool.using = false
+			pov.using = false
+	
+	elif event.is_action_pressed("use"):
+		var r = pov.get_node("selection_ray") as RayCast3D #attempt selecting interactable
+		if r.is_colliding() and r.get_collider().has_method("use"):
+			r.get_collider().use()
+			
 
 func _physics_process(delta: float) -> void:
 	if WRAPPER.is_ui_open() == true:

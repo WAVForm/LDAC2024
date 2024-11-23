@@ -6,9 +6,11 @@ var input_limit_timer = Timer.new()
 func _ready() -> void:
 	input_limit_timer.one_shot = true
 	add_child(input_limit_timer)
+	WRAPPER.add_sub_ui(WRAPPER.UIS.PLAYER)
 	pass # Replace with function body.
 
 func _input(event):
 	if event is InputEventKey and event.keycode == KEY_ESCAPE and (input_limit_timer.is_stopped() || input_limit_timer.time_left <= 0):
 		input_limit_timer.start(0.25)
 		WRAPPER.toggle_ui_of_id(WRAPPER.UIS.PAUSE)
+		WRAPPER.toggle_mouse_mode(Input.MOUSE_MODE_CAPTURED)

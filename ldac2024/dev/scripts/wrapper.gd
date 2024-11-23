@@ -36,9 +36,10 @@ func change_to_scene(scene_id:SCENES):
 #UIs
 var ui_node_list:Array = []
 var ui_state_list:Array = []
-enum UIS {PAUSE, TERMINAL}
+enum UIS {PAUSE, TERMINAL, PLAYER}
 var pause_ui = load("res://dev/scenes/uis/pause_ui.tscn")
 var terminal_ui = load("res://dev/scenes/uis/terminal_ui.tscn")
+var player_ui = load("")
 
 func reset_ui():
 	while not ui_node_list.is_empty():
@@ -78,3 +79,6 @@ func toggle_ui_of_id(ui_id:UIS):
 		add_sub_ui(ui_id)
 	else:
 		prev_sub_ui()
+		
+func toggle_mouse_mode(prev):
+	Input.mouse_mode = prev if ui_node_list.is_empty() else Input.mouse_mode
