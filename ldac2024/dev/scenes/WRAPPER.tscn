@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ubd0j24o8r0v"]
+
+[ext_resource type="Script" path="res://dev/scripts/wrapper.gd" id="1_pdsfx"]
+
+[node name="WRAPPER" type="Node"]
+script = ExtResource("1_pdsfx")
+CAMERA_SENSITIVITY = null
