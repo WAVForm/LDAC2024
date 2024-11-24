@@ -46,6 +46,8 @@ var player_ui = load("res://dev/scenes/uis/player_ui.tscn")
 func reset_ui():
 	while not ui_node_list.is_empty():
 		prev_sub_ui()
+	purge_nec_ui()
+		
 
 func switch_current_ui(ui_id:UIS):
 	prev_sub_ui()
@@ -78,6 +80,11 @@ func prev_sub_ui():
 		ui_node_list.back().queue_free() #free last ui
 		ui_node_list.pop_back() #remove last ui
 		ui_state_list.pop_back() #remote last ui state
+		
+func purge_nec_ui():
+	while not necessary_uis.is_empty():
+		necessary_uis.back().queue_free()
+		necessary_uis.pop_back()
 
 func is_ui_open():
 	if not ui_node_list.is_empty():
