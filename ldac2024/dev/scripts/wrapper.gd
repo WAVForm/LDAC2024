@@ -37,9 +37,10 @@ func change_to_scene(scene_id:SCENES):
 var necessary_uis:Array= []
 var ui_node_list:Array = []
 var ui_state_list:Array = []
-enum UIS {PAUSE, TERMINAL, PLAYER}
+enum UIS {PAUSE, TERMINAL, TERMINAL_ITEM, PLAYER}
 var pause_ui = load("res://dev/scenes/uis/pause_ui.tscn")
 var terminal_ui = load("res://dev/scenes/uis/terminal_ui.tscn")
+var terminal_item_ui = load("res://dev/scenes/uis/terminal/terminal_item_ui.tscn")
 var player_ui = load("res://dev/scenes/uis/player_ui.tscn")
 
 func reset_ui():
@@ -63,6 +64,9 @@ func add_sub_ui(ui_id:UIS):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		UIS.TERMINAL:
 			ui_node_list.append(terminal_ui.instantiate())
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		UIS.TERMINAL_ITEM:
+			ui_node_list.append(terminal_item_ui.instantiate())
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		_:
 			pass
@@ -89,3 +93,12 @@ func toggle_ui_of_id(ui_id:UIS):
 		
 func toggle_mouse_mode(prev):
 	Input.mouse_mode = prev if ui_node_list.is_empty() else Input.mouse_mode
+	
+#Orders
+var orders:Array
+signal new_order_in(item:Item)
+
+func _input(event):
+	if event.is_action_pressed("ui_page_down"):
+		new_order_in.emit(Item.TEST)
+		orders.append(Item.TEST)
