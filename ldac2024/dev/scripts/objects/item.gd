@@ -2,14 +2,17 @@ extends Node
 
 class_name Item
 
-var title: String
-var description: String
-var price: float
-var category: CATEGORY
-enum CATEGORY{NONE}
+static var TEST = Item.new("Test Item", "this is a test", Vector3i(0,0,0), 0, "")
 
-func _init(t_p:String, d_p:String, p_p:float, c_p:CATEGORY) -> void:
-	title = t_p
-	description = d_p
-	price = p_p
-	category = c_p
+@export var title: String
+@export var description: String
+@export var coords: Vector3i
+@export var truck: int
+@export var image: Image
+
+func _init(p_title:String, p_desc: String, p_coords: Vector3i, p_truck: int, p_imgpath: String) -> void:
+	title = p_title
+	description = p_desc
+	coords = p_coords
+	truck = p_truck
+	image = Image.load_from_file(p_imgpath)
