@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckbvyuk0fcqu2"]
+
+[ext_resource type="PackedScene" uid="uid://byhfl7emxgqf5" path="res://Abigail_modles/ladder.fbx" id="1_k4w83"]
+
+[node name="ladder" instance=ExtResource("1_k4w83")]
+
+[node name="Plane009" parent="." index="0"]
+transform = Transform3D(0.831777, 0, 0, 0, 0, 1, 0, -1.44892, 0, 0, 0, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="2"]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="RigidBody3D" index="0"]
+depth = 1.75
+polygon = PackedVector2Array(0.117951, -0.300539, -4.66747, -0.377227, -4.57918, 10.9988, -3.73161, 10.9507)

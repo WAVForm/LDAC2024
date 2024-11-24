@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bqryoln0hlt07"]
+[gd_scene load_steps=20 format=3 uid="uid://bqryoln0hlt07"]
 
 [ext_resource type="Script" path="res://dev/scripts/test_scene.gd" id="1_0lfjr"]
 [ext_resource type="PackedScene" uid="uid://c8ss7ie85eom7" path="res://dev/scenes/gameobjects/player.tscn" id="2_o1kdk"]
@@ -12,10 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://dgwfjie26rips" path="res://dev/scenes/models/blank_wall.tscn" id="11_xcean"]
 [ext_resource type="PackedScene" uid="uid://cvo70ljxfgl4e" path="res://dev/scenes/models/securiy_camera.tscn" id="12_lxtr1"]
 [ext_resource type="PackedScene" uid="uid://cywnpxkim8iy1" path="res://dev/scenes/models/fire_alarm.tscn" id="13_htgyg"]
-[ext_resource type="PackedScene" path="res://dev/scenes/models/ceiling_light.tscn" id="14_m6ov1"]
+[ext_resource type="PackedScene" uid="uid://dcofq6icnnfqm" path="res://dev/scenes/models/ceiling_light.tscn" id="14_m6ov1"]
 [ext_resource type="PackedScene" uid="uid://desyxf6l8bq4m" path="res://dev/scenes/models/wall_with_struts.tscn" id="14_wjwvf"]
-[ext_resource type="PackedScene" path="res://dev/scenes/models/ceiling_sprinkler.tscn" id="15_6d835"]
-[ext_resource type="PackedScene" path="res://dev/scenes/models/ceilling_fan.tscn" id="16_ow841"]
+[ext_resource type="PackedScene" uid="uid://bhlqkab47sraj" path="res://dev/scenes/models/ceiling_sprinkler.tscn" id="15_6d835"]
+[ext_resource type="PackedScene" uid="uid://b0xtbhxnhr7ig" path="res://dev/scenes/models/ceilling_fan.tscn" id="16_ow841"]
+[ext_resource type="PackedScene" uid="uid://ckbvyuk0fcqu2" path="res://dev/scenes/models/ladder.tscn" id="17_s1k0x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l3xax"]
 size = Vector3(198.65, 0.001, 281.596)
@@ -217,7 +218,7 @@ transform = Transform3D(-0.95, 0, -8.30516e-08, 0, 0.95, 0, 8.30516e-08, 0, -0.9
 [node name="walls" type="Node" parent="."]
 
 [node name="trucks + wall2" parent="walls" instance=ExtResource("11_cwllu")]
-transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -43.626, 0, 31.1756)
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -43.7452, 0, 31.1756)
 
 [node name="blank_wall" parent="walls" instance=ExtResource("11_xcean")]
 transform = Transform3D(-2.2896e-07, 0, -2, 0, 2, 0, 5.238, 0, -8.74228e-08, -45.138, -3.8147e-06, 119.027)
@@ -268,13 +269,16 @@ transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 151.66
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 151.665, 0, 66.311)
 
 [node name="ceiling_light" parent="." instance=ExtResource("14_m6ov1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.236, 33.5356, -24.6381)
 
 [node name="ceiling_sprinkler" parent="." instance=ExtResource("15_6d835")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5588, 38.8151, -57.0093)
 
 [node name="ceilling_fan" parent="." instance=ExtResource("16_ow841")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5306, 61.2083, 45.2783)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ejvy7")
+
+[node name="ladder" parent="." instance=ExtResource("17_s1k0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00686, 0, 13.8608)
