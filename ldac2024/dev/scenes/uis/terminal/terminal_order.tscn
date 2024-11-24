@@ -2,33 +2,44 @@
 
 [ext_resource type="Script" path="res://dev/scenes/uis/terminal/terminal_order.gd" id="1_0vuiu"]
 
-[node name="terminal_order" type="Control"]
+[node name="terminal_order" type="Panel"]
 clip_contents = true
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 100.0
-offset_bottom = 100.0
+custom_minimum_size = Vector2(200, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -952.0
+offset_bottom = -548.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
 script = ExtResource("1_0vuiu")
 
 [node name="bg" type="ColorRect" parent="."]
 layout_mode = 1
-offset_right = 100.0
-offset_bottom = 100.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="order_container" type="VBoxContainer" parent="."]
 layout_mode = 1
-offset_right = 100.0
-offset_bottom = 100.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="title" type="Label" parent="order_container"]
+custom_minimum_size = Vector2(100, 25)
 layout_mode = 2
-text = "Title"
+text = "Nicholas Cage Pillow"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="coords" type="Label" parent="order_container"]
 layout_mode = 2

@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @onready var pov:Node3D = $pov
 
-const SPEED_GAIN = 0.1
+const SPEED_GAIN = 0.2
 const SPEED_LOSS = 0.25
 const MAX_SPEED = 2.0
 const JUMP_POWER = 2.0
@@ -70,7 +70,6 @@ func move():
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_POWER
-		print("jumped")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
