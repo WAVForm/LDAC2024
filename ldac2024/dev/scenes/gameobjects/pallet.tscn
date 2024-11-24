@@ -1,165 +1,49 @@
 [gd_scene load_steps=4 format=3 uid="uid://x18xtduft8i6"]
 
 [ext_resource type="Script" path="res://dev/scripts/pallet.gd" id="1_o7h8t"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_o2s25"]
-size = Vector3(16, 0.5, 16)
+[ext_resource type="ArrayMesh" uid="uid://uolfxsv03rwe" path="res://models/pallet.tres" id="2_4qjum"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bcbj1"]
-size = Vector3(16, 7.5, 16)
+size = Vector3(7.49159, 22.08, 7.76659)
 
 [node name="pallet" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_o7h8t")
 
 [node name="model" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_o2s25")
+transform = Transform3D(18, 0, 0, 0, -7.86805e-07, 15, 0, -18, -6.55671e-07, 0, -0.3, 0)
+mesh = ExtResource("2_4qjum")
 
 [node name="collider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.067, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.067, 0, 0, 0, 1, 0.00492096, -0.595395, 0.0258408)
 shape = SubResource("BoxShape3D_bcbj1")
 
 [node name="points" type="Node3D" parent="."]
+transform = Transform3D(0.561654, 0, 0, 0, 1, 0, 0, 0, 0.548873, 0, 0, 0)
 
 [node name="00" type="Node3D" parent="points"]
-transform = Transform3D(0.992943, 0, -0.118595, 0, 1, 0, 0.118595, 0, 0.992943, -6, 0.3, -5.50938)
+transform = Transform3D(0.997564, 0, -0.0697565, 0, 1, 0, 0.0697565, 0, 0.997564, -4.5, 0.3, -4.5)
 
 [node name="01" type="Node3D" parent="points"]
-transform = Transform3D(0.997176, 0, 0.0751006, 0, 1, 0, -0.0751006, 0, 0.997176, -2, 0.3, -5.50938)
+transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 0, 0.3, -4.5)
 
 [node name="02" type="Node3D" parent="points"]
-transform = Transform3D(0.996518, 0, -0.0833822, 0, 1, 0, 0.0833822, 0, 0.996518, 2, 0.3, -5.50938)
+transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 4.5, 0.3, -4.5)
 
 [node name="03" type="Node3D" parent="points"]
-transform = Transform3D(0.993901, 0, -0.110272, 0, 1, 0, 0.110272, 0, 0.993901, 6, 0.3, -5.50938)
+transform = Transform3D(0.992546, 0, 0.121869, 0, 1, 0, -0.121869, 0, 0.992546, -4.5, 0.3, 0)
 
 [node name="04" type="Node3D" parent="points"]
-transform = Transform3D(0.997911, 0, -0.064602, 0, 1, 0, 0.064602, 0, 0.997911, -6, 0.3, -1.80938)
+transform = Transform3D(0.999391, 0, -0.0348995, 0, 1, 0, 0.0348995, 0, 0.999391, 0, 0.3, 0)
 
 [node name="05" type="Node3D" parent="points"]
-transform = Transform3D(0.967714, 0, -0.252052, 0, 1, 0, 0.252052, 0, 0.967714, -2, 0.3, -1.80938)
+transform = Transform3D(0.987688, 0, 0.156434, 0, 1, 0, -0.156434, 0, 0.987688, 4.5, 0.3, 0)
 
 [node name="06" type="Node3D" parent="points"]
-transform = Transform3D(0.991232, 0, 0.132135, 0, 1, 0, -0.132135, 0, 0.991232, 2, 0.3, -1.80938)
+transform = Transform3D(0.994522, 0, -0.104528, 0, 1, 0, 0.104528, 0, 0.994522, -4.5, 0.3, 4.5)
 
 [node name="07" type="Node3D" parent="points"]
-transform = Transform3D(0.99406, 0, 0.108832, 0, 1, 0, -0.108832, 0, 0.99406, 6, 0.3, -1.80938)
+transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 0, 0.3, 4.5)
 
 [node name="08" type="Node3D" parent="points"]
-transform = Transform3D(0.995331, 0, 0.0965233, 0, 1, 0, -0.0965233, 0, 0.995331, -6, 0.4, 1.89062)
-
-[node name="09" type="Node3D" parent="points"]
-transform = Transform3D(0.995331, 0, 0.0965233, 0, 1, 0, -0.0965233, 0, 0.995331, -2, 0.4, 1.89062)
-
-[node name="10" type="Node3D" parent="points"]
-transform = Transform3D(0.985677, 0, 0.168644, 0, 1, 0, -0.168644, 0, 0.985677, 2, 0.4, 1.89062)
-
-[node name="11" type="Node3D" parent="points"]
-transform = Transform3D(0.985677, 0, 0.168644, 0, 1, 0, -0.168644, 0, 0.985677, 6, 0.4, 1.89062)
-
-[node name="12" type="Node3D" parent="points"]
-transform = Transform3D(0.994974, 0, -0.100136, 0, 1, 0, 0.100136, 0, 0.994974, -6, 0.4, 5.59062)
-
-[node name="13" type="Node3D" parent="points"]
-transform = Transform3D(0.998756, 0, 0.0498608, 0, 1, 0, -0.0498608, 0, 0.998756, -2, 0.4, 5.59062)
-
-[node name="14" type="Node3D" parent="points"]
-transform = Transform3D(0.995322, 0, 0.0966101, 0, 1, 0, -0.0966101, 0, 0.995322, 2, 0.4, 5.59062)
-
-[node name="15" type="Node3D" parent="points"]
-transform = Transform3D(0.995322, 0, 0.0966101, 0, 1, 0, -0.0966101, 0, 0.995322, 6, 0.4, 5.59062)
-
-[node name="16" type="Node3D" parent="points"]
-transform = Transform3D(0.118595, 0, 0.992943, 0, 1, 0, -0.992943, 0, 0.118595, -5.55, 2.9, 6.04062)
-
-[node name="17" type="Node3D" parent="points"]
-transform = Transform3D(-0.0751006, 0, 0.997176, 0, 1, 0, -0.997176, 0, -0.0751006, -5.55, 2.9, 2.04062)
-
-[node name="18" type="Node3D" parent="points"]
-transform = Transform3D(0.0833821, 0, 0.996518, 0, 1, 0, -0.996518, 0, 0.0833821, -5.55, 2.9, -1.95938)
-
-[node name="19" type="Node3D" parent="points"]
-transform = Transform3D(0.110272, 0, 0.993901, 0, 1, 0, -0.993901, 0, 0.110272, -5.55, 2.9, -5.95938)
-
-[node name="20" type="Node3D" parent="points"]
-transform = Transform3D(0.064602, 0, 0.997911, 0, 1, 0, -0.997911, 0, 0.064602, -1.85, 2.9, 6.04062)
-
-[node name="21" type="Node3D" parent="points"]
-transform = Transform3D(0.252052, 0, 0.967714, 0, 1, 0, -0.967714, 0, 0.252052, -1.85, 2.9, 2.04062)
-
-[node name="22" type="Node3D" parent="points"]
-transform = Transform3D(-0.132135, 0, 0.991232, 0, 1, 0, -0.991232, 0, -0.132135, -1.85, 2.9, -1.95938)
-
-[node name="23" type="Node3D" parent="points"]
-transform = Transform3D(-0.108832, 0, 0.99406, 0, 1, 0, -0.99406, 0, -0.108832, -1.85, 2.9, -5.95938)
-
-[node name="24" type="Node3D" parent="points"]
-transform = Transform3D(-0.0965233, 0, 0.995331, 0, 1, 0, -0.995331, 0, -0.0965233, 1.85, 3, 6.04062)
-
-[node name="25" type="Node3D" parent="points"]
-transform = Transform3D(-0.0965233, 0, 0.995331, 0, 1, 0, -0.995331, 0, -0.0965233, 1.85, 3, 2.04062)
-
-[node name="26" type="Node3D" parent="points"]
-transform = Transform3D(-0.168644, 0, 0.985677, 0, 1, 0, -0.985677, 0, -0.168644, 1.85, 3, -1.95938)
-
-[node name="27" type="Node3D" parent="points"]
-transform = Transform3D(-0.168644, 0, 0.985677, 0, 1, 0, -0.985677, 0, -0.168644, 1.85, 3, -5.95938)
-
-[node name="28" type="Node3D" parent="points"]
-transform = Transform3D(0.100136, 0, 0.994974, 0, 1, 0, -0.994974, 0, 0.100136, 5.55, 3, 6.04062)
-
-[node name="29" type="Node3D" parent="points"]
-transform = Transform3D(-0.0498609, 0, 0.998756, 0, 1, 0, -0.998756, 0, -0.0498609, 5.55, 3, 2.04062)
-
-[node name="30" type="Node3D" parent="points"]
-transform = Transform3D(-0.0966102, 0, 0.995322, 0, 1, 0, -0.995322, 0, -0.0966102, 5.55, 3, -1.95938)
-
-[node name="31" type="Node3D" parent="points"]
-transform = Transform3D(-0.0966102, 0, 0.995322, 0, 1, 0, -0.995322, 0, -0.0966102, 5.55, 3, -5.95938)
-
-[node name="32" type="Node3D" parent="points"]
-transform = Transform3D(-0.992943, 0, 0.118595, 0, 1, 0, -0.118595, 0, -0.992943, 6, 5.6, 5.59062)
-
-[node name="33" type="Node3D" parent="points"]
-transform = Transform3D(-0.997176, 0, -0.0751006, 0, 1, 0, 0.0751006, 0, -0.997176, 2, 5.6, 5.59062)
-
-[node name="34" type="Node3D" parent="points"]
-transform = Transform3D(-0.996518, 0, 0.0833821, 0, 1, 0, -0.0833821, 0, -0.996518, -2, 5.6, 5.59062)
-
-[node name="35" type="Node3D" parent="points"]
-transform = Transform3D(-0.993901, 0, 0.110272, 0, 1, 0, -0.110272, 0, -0.993901, -6, 5.6, 5.59062)
-
-[node name="36" type="Node3D" parent="points"]
-transform = Transform3D(-0.997911, 0, 0.0646019, 0, 1, 0, -0.0646019, 0, -0.997911, 6, 5.6, 1.89062)
-
-[node name="37" type="Node3D" parent="points"]
-transform = Transform3D(-0.967714, 0, 0.252052, 0, 1, 0, -0.252052, 0, -0.967714, 2, 5.6, 1.89062)
-
-[node name="38" type="Node3D" parent="points"]
-transform = Transform3D(-0.991232, 0, -0.132135, 0, 1, 0, 0.132135, 0, -0.991232, -2, 5.6, 1.89062)
-
-[node name="39" type="Node3D" parent="points"]
-transform = Transform3D(-0.99406, 0, -0.108832, 0, 1, 0, 0.108832, 0, -0.99406, -6, 5.6, 1.89062)
-
-[node name="40" type="Node3D" parent="points"]
-transform = Transform3D(-0.995331, 0, -0.0965234, 0, 1, 0, 0.0965234, 0, -0.995331, 6, 5.7, -1.80938)
-
-[node name="41" type="Node3D" parent="points"]
-transform = Transform3D(-0.995331, 0, -0.0965234, 0, 1, 0, 0.0965234, 0, -0.995331, 2, 5.7, -1.80938)
-
-[node name="42" type="Node3D" parent="points"]
-transform = Transform3D(-0.985677, 0, -0.168644, 0, 1, 0, 0.168644, 0, -0.985677, -2, 5.7, -1.80938)
-
-[node name="43" type="Node3D" parent="points"]
-transform = Transform3D(-0.985677, 0, -0.168644, 0, 1, 0, 0.168644, 0, -0.985677, -6, 5.7, -1.80938)
-
-[node name="44" type="Node3D" parent="points"]
-transform = Transform3D(-0.994974, 0, 0.100136, 0, 1, 0, -0.100136, 0, -0.994974, 6, 5.7, -5.50938)
-
-[node name="45" type="Node3D" parent="points"]
-transform = Transform3D(-0.998756, 0, -0.0498609, 0, 1, 0, 0.0498609, 0, -0.998756, 2, 5.7, -5.50938)
-
-[node name="46" type="Node3D" parent="points"]
-transform = Transform3D(-0.995322, 0, -0.0966102, 0, 1, 0, 0.0966102, 0, -0.995322, -2, 5.7, -5.50938)
-
-[node name="47" type="Node3D" parent="points"]
-transform = Transform3D(-0.995322, 0, -0.0966102, 0, 1, 0, 0.0966102, 0, -0.995322, -6, 5.7, -5.50938)
+transform = Transform3D(0.999848, 0, -0.0174524, 0, 1, 0, 0.0174524, 0, 0.999848, 4.5, 0.3, 4.5)

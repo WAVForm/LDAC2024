@@ -21,7 +21,7 @@ func _input(event):
 		WRAPPER.toggle_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func order_to_random_box(item:Item):
-	item.truck = randi_range(1,6)
+	item.truck = randi_range(1,4)
 	var shelf = $shelves.get_children().pick_random() #pick random shelf
 	var spot = str(randi_range(0,19)) + str(randi_range(0,1)) #pick random spot
 	print(shelf.name)
