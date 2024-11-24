@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://dev/scripts/test_scene.gd" id="1_0lfjr"]
 [ext_resource type="PackedScene" uid="uid://c8ss7ie85eom7" path="res://dev/scenes/gameobjects/player.tscn" id="2_o1kdk"]
 [ext_resource type="PackedScene" uid="uid://b5qkk5jvj1oal" path="res://dev/scenes/gameobjects/terminal.tscn" id="3_7tqby"]
-[ext_resource type="PackedScene" uid="uid://icdvmkrc8jha" path="res://dev/scenes/gameobjects/scannable.tscn" id="4_e0q6b"]
+[ext_resource type="PackedScene" path="res://dev/scenes/gameobjects/scannable.tscn" id="4_e0q6b"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ayy48"]
 size = Vector2(5, 5)
