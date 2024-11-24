@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bqryoln0hlt07"]
+[gd_scene load_steps=19 format=3 uid="uid://bqryoln0hlt07"]
 
 [ext_resource type="Script" path="res://dev/scripts/test_scene.gd" id="1_0lfjr"]
 [ext_resource type="PackedScene" uid="uid://c8ss7ie85eom7" path="res://dev/scenes/gameobjects/player.tscn" id="2_o1kdk"]
@@ -6,19 +6,28 @@
 [ext_resource type="PackedScene" uid="uid://x18xtduft8i6" path="res://dev/scenes/gameobjects/pallet.tscn" id="4_1ubun"]
 [ext_resource type="PackedScene" uid="uid://dw4n5e60sue1h" path="res://models/level_blockout.fbx" id="5_kpspt"]
 [ext_resource type="PackedScene" uid="uid://ppyi5lebys11" path="res://dev/scenes/gameobjects/shelf.tscn" id="6_u2lgs"]
-[ext_resource type="ArrayMesh" uid="uid://yeanayr40o1k" path="res://models/floor.tres" id="7_lah7v"]
+[ext_resource type="ArrayMesh" uid="uid://62hgkadt8ubr" path="res://models/floor.tres" id="7_lah7v"]
 [ext_resource type="PackedScene" uid="uid://ue3eegi4kuys" path="res://dev/scenes/models/robot.tscn" id="10_umtfg"]
 [ext_resource type="PackedScene" uid="uid://mnv13k25rjvo" path="res://dev/scenes/models/trucks_+_wall.tscn" id="11_cwllu"]
 [ext_resource type="PackedScene" uid="uid://dgwfjie26rips" path="res://dev/scenes/models/blank_wall.tscn" id="11_xcean"]
 [ext_resource type="PackedScene" uid="uid://cvo70ljxfgl4e" path="res://dev/scenes/models/securiy_camera.tscn" id="12_lxtr1"]
 [ext_resource type="PackedScene" uid="uid://cywnpxkim8iy1" path="res://dev/scenes/models/fire_alarm.tscn" id="13_htgyg"]
-[ext_resource type="PackedScene" uid="uid://dcofq6icnnfqm" path="res://dev/scenes/models/ceiling_light.tscn" id="14_m6ov1"]
+[ext_resource type="PackedScene" path="res://dev/scenes/models/ceiling_light.tscn" id="14_m6ov1"]
 [ext_resource type="PackedScene" uid="uid://desyxf6l8bq4m" path="res://dev/scenes/models/wall_with_struts.tscn" id="14_wjwvf"]
-[ext_resource type="PackedScene" uid="uid://bhlqkab47sraj" path="res://dev/scenes/models/ceiling_sprinkler.tscn" id="15_6d835"]
-[ext_resource type="PackedScene" uid="uid://b0xtbhxnhr7ig" path="res://dev/scenes/models/ceilling_fan.tscn" id="16_ow841"]
+[ext_resource type="PackedScene" path="res://dev/scenes/models/ceiling_sprinkler.tscn" id="15_6d835"]
+[ext_resource type="PackedScene" path="res://dev/scenes/models/ceilling_fan.tscn" id="16_ow841"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l3xax"]
 size = Vector3(198.65, 0.001, 281.596)
+
+[sub_resource type="Environment" id="Environment_ejvy7"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.25
+glow_intensity = 2.77
+glow_bloom = 1.0
+adjustment_enabled = true
+adjustment_saturation = 0.5
 
 [node name="devtest" type="Node3D"]
 script = ExtResource("1_0lfjr")
@@ -266,3 +275,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -18)
 
 [node name="ceilling_fan" parent="." instance=ExtResource("16_ow841")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ejvy7")
