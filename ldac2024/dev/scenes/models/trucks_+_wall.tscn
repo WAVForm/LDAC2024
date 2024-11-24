@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://mnv13k25rjvo"]
+[gd_scene load_steps=13 format=3 uid="uid://mnv13k25rjvo"]
 
 [ext_resource type="PackedScene" uid="uid://cjgbiuintrmfn" path="res://Abigail_modles/trucks + wall.fbx" id="1_sryq3"]
 [ext_resource type="Texture2D" uid="uid://b7tedcuk8a6hs" path="res://textures/additional_textures_gradient.png" id="2_bq146"]
+[ext_resource type="Material" uid="uid://cfa7j711lc6o" path="res://materials/mat2.tres" id="3_f72p5"]
+[ext_resource type="Texture2D" uid="uid://decb56flgbj61" path="res://textures/boxes_textures_gradient.png" id="4_snr16"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjcqk"]
 albedo_texture = ExtResource("2_bq146")
@@ -17,6 +19,9 @@ albedo_texture = ExtResource("2_bq146")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wph2r"]
 albedo_texture = ExtResource("2_bq146")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3sv2w"]
+albedo_texture = ExtResource("4_snr16")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fe30q"]
 size = Vector3(36.5533, 52.7036, 11.0984)
@@ -40,6 +45,15 @@ material_override = SubResource("StandardMaterial3D_nbhcf")
 
 [node name="blank_wall" parent="." index="4"]
 material_override = SubResource("StandardMaterial3D_wph2r")
+
+[node name="Object018" parent="." index="5"]
+surface_material_override/0 = ExtResource("3_f72p5")
+
+[node name="Object019" parent="." index="6"]
+surface_material_override/0 = ExtResource("3_f72p5")
+
+[node name="Object020" parent="." index="7"]
+material_override = SubResource("StandardMaterial3D_3sv2w")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="9"]
 

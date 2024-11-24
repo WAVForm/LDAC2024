@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bqryoln0hlt07"]
+[gd_scene load_steps=32 format=3 uid="uid://bqryoln0hlt07"]
 
 [ext_resource type="Script" path="res://dev/scripts/test_scene.gd" id="1_0lfjr"]
 [ext_resource type="PackedScene" uid="uid://c8ss7ie85eom7" path="res://dev/scenes/gameobjects/player.tscn" id="2_o1kdk"]
@@ -22,8 +22,11 @@
 [ext_resource type="Script" path="res://dev/scenes/ROBOT_01.gd" id="19_xjqvr"]
 [ext_resource type="Script" path="res://dev/scenes/robot_02.gd" id="20_libsu"]
 [ext_resource type="Script" path="res://dev/scenes/MID ROBOT.gd" id="21_4dhjm"]
-[ext_resource type="AudioStream" uid="uid://vufd2o562375" path="res://sounds/airport lounge fast.mp3" id="24_io4tl"]
+[ext_resource type="PackedScene" uid="uid://cw4qgpufv55aq" path="res://dev/scenes/models/box_pile.tscn" id="24_xlckj"]
 [ext_resource type="PackedScene" uid="uid://cxmdrx3ivou5m" path="res://dev/scenes/models/mid robot.tscn" id="25_pn6l1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2n0it"]
+resource_local_to_scene = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l3xax"]
 size = Vector3(198.65, 0.001, 281.596)
@@ -39,10 +42,10 @@ adjustment_saturation = 0.5
 
 [sub_resource type="Curve3D" id="Curve3D_ya1kt"]
 _data = {
-"points": PackedVector3Array(-2.76941, 0, 3.76606, 2.76941, 0, -3.76606, 23.1778, 0, 95.917, 8.83198, 0, 11.225, -8.83198, 0, -11.225, 22.5159, 0, -121.72, 8.05541, 0, -10.5514, -8.05541, 0, 10.5514, -17.3873, 0, -121.452, -7.61531, 0, -6.82779, 7.61531, 0, 6.82779, -15.8135, 0, -22.9081, -7.91034, 0, -6.36407, 7.91034, 0, 6.36407, 16.3003, 0, -22.5602, 3.30976, 0, -5.85859, -3.30976, 0, 5.85859, 15.955, 0, 48.7653, 5.44791, 0, -5.10481, -5.44791, 0, 5.10481, -24.4463, 0, 48.4173, -4.56388, 0, -5.17324, 4.56388, 0, 5.17324, -24.101, 0, 94.3439, -7.96889, 0, 4.91445, 7.96889, 0, -4.91445, 23.1776, 0, 95.9171),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(-2.76941, 0, 3.76606, 2.76941, 0, -3.76606, 23.124, 0, 96.0484, 8.83198, 0, 11.225, -8.83198, 0, -11.225, 17.7248, 0, -121.72, 8.05541, 0, -10.5514, -8.05541, 0, 10.5514, -17.3873, 0, -121.452, -7.61531, 0, -6.82779, 7.61531, 0, 6.82779, -15.8135, 0, -22.9081, -7.91034, 0, -6.36407, 7.91034, 0, 6.36407, 16.3003, 0, -22.5602, 3.30976, 0, -5.85859, -3.30976, 0, 5.85859, 3.92338, 0, 53.0473, -7.96889, 0, 4.91445, 7.96889, 0, -4.91445, 23.1776, 0, 95.9171),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 9
+point_count = 7
 
 [sub_resource type="Curve3D" id="Curve3D_5pe57"]
 _data = {
@@ -205,6 +208,7 @@ transform = Transform3D(1, 0, -6.99382e-07, 0, 1, 0, 6.99382e-07, 0, 1, 79.0052,
 transform = Transform3D(-6.99382e-07, 7, 4.37114e-08, 0, -3.0598e-07, 1, 16, 3.0598e-07, 1.91069e-15, -45.23, 0, 118.965)
 mesh = ExtResource("7_lah7v")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_2n0it")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00689697, -0.00750995, 0.718597)
@@ -351,7 +355,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5306, 61.2083, 45.2783)
 environment = SubResource("Environment_ejvy7")
 
 [node name="ladder" parent="." instance=ExtResource("17_s1k0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00686, 0, 13.8608)
+transform = Transform3D(-0.234685, 0, -2.36419, 0, 2.37581, 0, 2.36419, 0, -0.234685, 36.037, 0, 18.3226)
+
+[node name="ladder2" parent="." instance=ExtResource("17_s1k0x")]
+transform = Transform3D(0.220321, 0, 2.36557, 0, 2.37581, 0, -2.36557, 0, 0.220321, 33.7646, 0, -60.5079)
+
+[node name="ladder4" parent="." instance=ExtResource("17_s1k0x")]
+transform = Transform3D(0.0104075, 0, 2.37579, 0, 2.37581, 0, -2.37579, 0, 0.0104075, 132.292, 0, -112.783)
+
+[node name="ladder3" parent="." instance=ExtResource("17_s1k0x")]
+transform = Transform3D(0.220321, 0, 2.36557, 0, 2.37581, 0, -2.36557, 0, 0.220321, 33.1531, 0, 85.5122)
 
 [node name="robots" type="Node3D" parent="."]
 
@@ -360,7 +373,7 @@ transform = Transform3D(1.04514, 0, 0, 0, 1.00158, 0, 0, 0, 1.03728, -3.46461, 0
 curve = SubResource("Curve3D_ya1kt")
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="robots/out front robot"]
-transform = Transform3D(0.805604, 0, -0.592409, 0, 1, 0, 0.592409, 0, 0.805604, 23.1778, 0, 95.917)
+transform = Transform3D(0.805604, 0, -0.592409, 0, 1, 0, 0.592409, 0, 0.805604, 23.124, 0, 96.0484)
 script = ExtResource("19_xjqvr")
 
 [node name="BigRobot" parent="robots/out front robot/PathFollow3D2" instance=ExtResource("19_1oam2")]
@@ -475,7 +488,11 @@ script = ExtResource("21_4dhjm")
 [node name="RigidBody3D" parent="Path3D8/PathFollow3D" instance=ExtResource("25_pn6l1")]
 transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("24_io4tl")
-volume_db = -10.0
-autoplay = true
+[node name="box_pile" parent="." instance=ExtResource("24_xlckj")]
+transform = Transform3D(-0.763357, 0, 1.60445, 0, 1.77678, 0, -1.60445, 0, -0.763357, -26.9802, -0.0222573, -145.583)
+
+[node name="box_pile2" parent="." instance=ExtResource("24_xlckj")]
+transform = Transform3D(-1.21303, 0, -1.29827, 0, 1.77678, 0, 1.29827, 0, -1.21303, -31.5665, -0.0222573, 98.9556)
+
+[node name="box_pile3" parent="." instance=ExtResource("24_xlckj")]
+transform = Transform3D(-1.70548, 0, -0.498297, 0, 1.77678, 0, 0.498297, 0, -1.70548, -33.1227, -0.0222573, 59.8856)
