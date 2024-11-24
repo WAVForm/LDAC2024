@@ -55,100 +55,100 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.0343, 0.0990548, 26.5872)
 
 [node name="shelves" type="Node3D" parent="."]
 
-[node name="shelf" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="40" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 37.6987, 0, -22)
 
-[node name="shelf2" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="41" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 90.1, 0, -22)
 
-[node name="shelf3" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="33" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 131.301, 0, -35)
 
-[node name="shelf4" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="32" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 79, 0, -35)
 
-[node name="shelf5" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="30" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, 37.6987, 0, -48.5)
 
-[node name="shelf6" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="31" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, 90.1, 0, -48.5)
 
-[node name="shelf7" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="23" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -3.49691e-07, 0, 1, 0, 3.49691e-07, 0, 1, 131.301, 0, -61.5)
 
-[node name="shelf8" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="22" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -3.49691e-07, 0, 1, 0, 3.49691e-07, 0, 1, 79, 0, -61.5)
 
-[node name="shelf9" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="20" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 4.37114e-07, 0, 1, 0, -4.37114e-07, 0, -1, 37.7038, -7.62939e-06, -74.8796)
 
-[node name="shelf10" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="21" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 4.37114e-07, 0, 1, 0, -4.37114e-07, 0, -1, 90.1052, -7.62939e-06, -74.8796)
 
-[node name="shelf11" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="13" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -5.24537e-07, 0, 1, 0, 5.24537e-07, 0, 1, 131.307, -7.62939e-06, -87.8796)
 
-[node name="shelf12" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="12" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -5.24537e-07, 0, 1, 0, 5.24537e-07, 0, 1, 79.0052, -7.62939e-06, -87.8796)
 
-[node name="shelf13" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="10" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 6.11959e-07, 0, 1, 0, -6.11959e-07, 0, -1, 37.7039, -7.62939e-06, -101.294)
 
-[node name="shelf14" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="11" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 6.11959e-07, 0, 1, 0, -6.11959e-07, 0, -1, 90.1052, -7.62939e-06, -101.294)
 
-[node name="shelf15" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="01" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -6.99382e-07, 0, 1, 0, 6.99382e-07, 0, 1, 131.306, -7.62939e-06, -114.294)
 
-[node name="shelf16" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="00" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -6.99382e-07, 0, 1, 0, 6.99382e-07, 0, 1, 79.0052, -7.62939e-06, -114.294)
 
-[node name="shelf17" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="80" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 37.6987, 0, 98.3)
 
-[node name="shelf18" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="81" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 90.1, 0, 98.3)
 
-[node name="shelf19" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="73" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 131.301, 0, 85.3)
 
-[node name="shelf20" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="72" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 79, 0, 85.3)
 
-[node name="shelf21" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="70" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, 37.6987, 0, 71.8)
 
-[node name="shelf22" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="71" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, 90.1, 0, 71.8)
 
-[node name="shelf23" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="63" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -3.49691e-07, 0, 1, 0, 3.49691e-07, 0, 1, 131.301, 0, 58.8)
 
-[node name="shelf24" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="62" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -3.49691e-07, 0, 1, 0, 3.49691e-07, 0, 1, 79, 0, 58.8)
 
-[node name="shelf25" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="60" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 4.37114e-07, 0, 1, 0, -4.37114e-07, 0, -1, 37.7038, -7.62939e-06, 45.506)
 
-[node name="shelf26" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="61" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 4.37114e-07, 0, 1, 0, -4.37114e-07, 0, -1, 90.1052, -7.62939e-06, 45.506)
 
-[node name="shelf27" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="53" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -5.24537e-07, 0, 1, 0, 5.24537e-07, 0, 1, 131.307, -7.62939e-06, 32.5061)
 
-[node name="shelf28" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="52" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -5.24537e-07, 0, 1, 0, 5.24537e-07, 0, 1, 79.0052, -7.62939e-06, 32.506)
 
-[node name="shelf29" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="50" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 6.11959e-07, 0, 1, 0, -6.11959e-07, 0, -1, 37.7039, -7.62939e-06, 19.006)
 
-[node name="shelf30" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="51" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(-1, 0, 6.11959e-07, 0, 1, 0, -6.11959e-07, 0, -1, 90.1052, -7.62939e-06, 19.0061)
 
-[node name="shelf31" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="43" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -6.99382e-07, 0, 1, 0, 6.99382e-07, 0, 1, 131.306, -7.62939e-06, 6.00607)
 
-[node name="shelf32" parent="shelves" instance=ExtResource("6_u2lgs")]
+[node name="42" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -6.99382e-07, 0, 1, 0, 6.99382e-07, 0, 1, 79.0052, -7.62939e-06, 6.00604)
 
 [node name="floor" type="Node3D" parent="."]

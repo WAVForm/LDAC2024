@@ -24,6 +24,8 @@ func order_to_random_box(item:Item):
 	item.truck = randi_range(1,6)
 	var shelf = $shelves.get_children().pick_random() #pick random shelf
 	var spot = str(randi_range(0,19)) + str(randi_range(0,1)) #pick random spot
+	print(shelf.name)
+	print(int(shelf.name.to_lower()[0])+1, (0 if int(shelf.name.to_lower()[1]) == 0 or int(shelf.name.to_lower()[1]) == 2 else 1)+1, int(spot.erase(spot.length() - 1))+1)
 	item.coords = Vector3i(int(shelf.name.to_lower()[0])+1, (0 if int(shelf.name.to_lower()[1]) == 0 or int(shelf.name.to_lower()[1]) == 2 else 1)+1, int(spot.erase(spot.length() - 1))+1) #update coords
 	var box = shelf.get_node("slots/"+spot).get_child(0)
 	box.item = item #get first child (the box) and set item
