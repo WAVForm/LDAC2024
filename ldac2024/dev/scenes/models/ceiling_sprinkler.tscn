@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhlqkab47sraj"]
+
+[ext_resource type="PackedScene" uid="uid://bh3b8elqwfqkw" path="res://models/ceiling_sprinkler.fbx" id="1_rvqoe"]
+[ext_resource type="Texture2D" uid="uid://b7tedcuk8a6hs" path="res://textures/additional_textures_gradient.png" id="2_n54xy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chebn"]
+albedo_texture = ExtResource("2_n54xy")
+
+[node name="ceiling_sprinkler" instance=ExtResource("1_rvqoe")]
+
+[node name="ceiling_sprinkler" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_chebn")
