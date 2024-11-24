@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://e8dylytovi50"]
+
+[ext_resource type="Script" path="res://dev/terminal_order.gd" id="1_0vuiu"]
+
+[node name="terminal_order" type="Panel"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -952.0
+offset_bottom = -548.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+script = ExtResource("1_0vuiu")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="order_container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title" type="Label" parent="order_container"]
+custom_minimum_size = Vector2(100, 25)
+layout_mode = 2
+text = "Nicholas Cage Pillow"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="coords" type="Label" parent="order_container"]
+layout_mode = 2
+text = "(A,B,0)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="time?" type="Label" parent="order_container"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 32
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1

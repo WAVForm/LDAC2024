@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkmwjgi6i0iv4"]
+
+[ext_resource type="ArrayMesh" uid="uid://bw6ro2frifgpr" path="res://models/bubblemailer_1.tres" id="1_sgk8l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nyaod"]
+size = Vector3(3.21326, 2.62209, 0.879457)
+
+[node name="bubblemailer1" type="Node3D"]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0, 0.2, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_sgk8l")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00696945, -3.02615e-05, 0.318694)
+shape = SubResource("BoxShape3D_nyaod")

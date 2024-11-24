@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://desyxf6l8bq4m"]
+
+[ext_resource type="PackedScene" uid="uid://dpo2u04y2vnek" path="res://models/wall_with_struts.fbx" id="1_4dv3d"]
+[ext_resource type="Texture2D" uid="uid://b7tedcuk8a6hs" path="res://textures/additional_textures_gradient.png" id="2_ws1ii"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7oj3"]
+albedo_texture = ExtResource("2_ws1ii")
+
+[node name="wall_with_struts" instance=ExtResource("1_4dv3d")]
+
+[node name="wall_with_struts" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_q7oj3")

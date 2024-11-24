@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://di5aewd3t4aw"]
+
+[ext_resource type="Script" path="res://dev/scripts/pause_ui.gd" id="1_e5m2e"]
+
+[node name="pause_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -99.0
+offset_right = 124.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e5m2e")
+
+[node name="menu_container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_right = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="title" type="Label" parent="menu_container"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 72
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="items_container" type="VBoxContainer" parent="menu_container"]
+layout_mode = 2
+
+[node name="main_menu_button" type="Button" parent="menu_container/items_container"]
+layout_mode = 2
+text = "Back To Main Menu"
+
+[node name="options_button" type="Button" parent="menu_container/items_container"]
+layout_mode = 2
+text = "Options
+"

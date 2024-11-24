@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bescgqgj5aygy"]
+
+[ext_resource type="Texture2D" uid="uid://decb56flgbj61" path="res://textures/boxes_textures_gradient.png" id="1_ey5j7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kmx0"]
+render_priority = 1
+transparency = 1
+albedo_texture = ExtResource("1_ey5j7")
+
+[resource]
+next_pass = SubResource("StandardMaterial3D_1kmx0")
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)

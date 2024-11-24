@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5qkk5jvj1oal"]
+
+[ext_resource type="Script" path="res://dev/scripts/terminal.gd" id="1_mrvh0"]
+[ext_resource type="ArrayMesh" uid="uid://byq13t5jea4hc" path="res://models/desk.tres" id="2_m3p1p"]
+[ext_resource type="ArrayMesh" uid="uid://bpcy7kk25rtx0" path="res://models/computer.tres" id="3_4h7yh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0sok4"]
+size = Vector3(1.40206, 0.701375, 1.14616)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g61n0"]
+size = Vector3(1.64282, 1.04193, 1.04968)
+
+[node name="terminal" type="StaticBody3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+script = ExtResource("1_mrvh0")
+
+[node name="computer_collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0810771, 1.399, -0.125588)
+shape = SubResource("BoxShape3D_0sok4")
+
+[node name="desk" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -5.68248e-08, 1, 0, -1.3, -4.37114e-08, 0, 0, -0.124701)
+mesh = ExtResource("2_m3p1p")
+
+[node name="desk_collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00305582, 0.521524, 0.0310664)
+shape = SubResource("BoxShape3D_g61n0")
+
+[node name="computer" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.119598, 1, -0.265403)
+mesh = ExtResource("3_4h7yh")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.91412, 0)
+double_sided = false
+text = "View Orders"
