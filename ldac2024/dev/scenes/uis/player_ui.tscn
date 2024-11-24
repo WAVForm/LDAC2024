@@ -25,4 +25,4 @@ grow_horizontal = 2
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 text = "LMB: Scan
-E: Use"
+E: Use/Put In, R: Take Out"

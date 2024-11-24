@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @onready var pov:Node3D = $pov
 
-const SPEED_GAIN = 0.1
+const SPEED_GAIN = 0.2
 const SPEED_LOSS = 0.25
 const MAX_SPEED = 2.0
 const JUMP_POWER = 2.0
@@ -12,7 +12,8 @@ var current_speed = 0.0
 var scan_timer:Timer
 var can_scan = false
 
-var packages:Array
+var inventory:Array
+@onready var inventory_drop_position = $pov/inventory_drop_position
 
 func _input(event):
 	if WRAPPER.is_ui_open() == true:
@@ -35,6 +36,10 @@ func _input(event):
 			var returned = r.get_collider().use()
 			if returned != null and returned is Scannable:
 				place_in_inventory(returned)
+	
+	elif event.is_action_pressed("remove"):
+		if not inventory.is_empty():
+			take_out_inventory(inventory.back())
 			
 
 func _ready():
@@ -45,8 +50,8 @@ func _ready():
 	
 
 func _process(_delta):
-	if can_scan and ray.is_colliding() and ray.get_collider().has_method("scan"):
-		print(ray.get_collider().scan())
+	if can_scan and ray.is_colliding() and ray.get_collider().has_method("scan") and ray.get_collider() is Scannable:
+		ray.get_collider().scan()
 		var e:= InputEventMouseButton.new()
 		e.pressed = false
 		_input(e)
@@ -65,7 +70,6 @@ func move():
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_POWER
-		print("jumped")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -93,11 +97,14 @@ func turn_pov(input_dir:Vector2):
 		pov.rotation_degrees.x += input_dir.y * WRAPPER.CAMERA_SENSITIVITY
 		pov.rotation_degrees.y += input_dir.x * WRAPPER.CAMERA_SENSITIVITY
 		
-func place_in_inventory(p):
-	packages.append(p)
-	p.visible = false
+func place_in_inventory(box):
+	inventory.append(box)
+	box.visible = false
+	box.freeze = true
 	
-func take_out_inventory(p):
-	p.position = pov.position
-	p.visible = true
-	packages.erase(p)
+	
+func take_out_inventory(box):
+	inventory.erase(box)
+	box.position = inventory_drop_position.global_position
+	box.visible = true
+	box.freeze = false

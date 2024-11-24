@@ -99,6 +99,6 @@ var orders:Array
 signal new_order_in(item:Item)
 
 func _input(event):
-	if event.is_action_pressed("ui_page_down"):
-		new_order_in.emit(Item.TEST)
-		orders.append(Item.TEST)
+	if event.is_action_pressed("ui_page_up"):
+		new_order_in.emit(Item.Items.pick_random())
+		orders.append(Item.Items.pick_random())

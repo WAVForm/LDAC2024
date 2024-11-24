@@ -2,10 +2,13 @@ extends Node3D
 
 class_name Scannable
 
-@export var item:Item = Item.new("Test", "This is a test", Vector3i(0,0,0), 0, "")
+var item:Item
+
+var scanned:bool = false
 
 func scan():
+	scanned = true
 	return item
 	
 func use():
-	return self
+	return self if scanned else null

@@ -20,7 +20,7 @@ func _ready() -> void:
 func add_order(item):
 	var o = order_prefab.instantiate()
 	o.initialize(item)
-	($orders/orders_container).add_child(o)
+	($orders/scroll/orders_container).add_child(o)
 	o.clicked.connect(func():
 		WRAPPER.add_sub_ui(WRAPPER.UIS.TERMINAL_ITEM)
 		var item_window = WRAPPER.ui_node_list.back()

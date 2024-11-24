@@ -39,6 +39,9 @@ light_energy = 0.1
 spot_range = 1.0
 spot_angle = 30.0
 
+[node name="inventory_drop_position" type="Node3D" parent="pov"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.300068)
+
 [node name="view_container" type="SubViewportContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,20 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5qkk5jvj1oal"]
 
 [ext_resource type="Script" path="res://dev/scripts/terminal.gd" id="1_mrvh0"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_4847x"]
-size = Vector3(0.1, 0.4, 0.1)
+[ext_resource type="PackedScene" uid="uid://8161h5iko632" path="res://Abigail_modles/computer.fbx" id="2_jkgk3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0sok4"]
-size = Vector3(0.1, 0.4, 0.1)
+size = Vector3(1.10192, 0.768884, 1.16936)
 
 [node name="terminal" type="StaticBody3D"]
 script = ExtResource("1_mrvh0")
 
-[node name="model" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
-mesh = SubResource("BoxMesh_4847x")
+[node name="computer" parent="." instance=ExtResource("2_jkgk3")]
 
 [node name="collider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.199633, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219281, 0.378545, -0.0283814)
 shape = SubResource("BoxShape3D_0sok4")

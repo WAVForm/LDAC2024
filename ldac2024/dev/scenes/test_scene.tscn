@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqryoln0hlt07"]
+[gd_scene load_steps=6 format=3 uid="uid://bqryoln0hlt07"]
 
 [ext_resource type="Script" path="res://dev/scripts/test_scene.gd" id="1_0lfjr"]
 [ext_resource type="PackedScene" uid="uid://c8ss7ie85eom7" path="res://dev/scenes/gameobjects/player.tscn" id="2_o1kdk"]
 [ext_resource type="PackedScene" uid="uid://b5qkk5jvj1oal" path="res://dev/scenes/gameobjects/terminal.tscn" id="3_7tqby"]
-[ext_resource type="PackedScene" path="res://dev/scenes/gameobjects/scannable.tscn" id="4_e0q6b"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ayy48"]
 size = Vector2(5, 5)
@@ -32,5 +31,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 [node name="terminal" parent="." instance=ExtResource("3_7tqby")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0753726, -0.767367)
 
-[node name="scannable" parent="." instance=ExtResource("4_e0q6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.667969, 0.111964, -0.938416)
+[node name="box_spawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.715962, 0.720404, -0.851139)
