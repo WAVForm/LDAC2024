@@ -12,7 +12,8 @@ func _ready() -> void:
 	WRAPPER.new_order_in.connect(func(item):
 		order_to_random_box(item)
 	)
-	pass # Replace with function body.
+	self.add_child(WRAPPER.time)
+	WRAPPER.time.start(300) #start 5 minute timer
 
 func _input(event):
 	if event is InputEventKey and event.keycode == KEY_ESCAPE and (input_limit_timer.is_stopped() || input_limit_timer.time_left <= 0):
