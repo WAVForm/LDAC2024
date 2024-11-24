@@ -15,7 +15,7 @@ func _ready() -> void:
 		order_to_random_box(item)
 	)
 	WRAPPER.add_nec_ui(WRAPPER.UIS.PLAYER)
-	self.add_child(WRAPPER.time)
+	add_child(WRAPPER.time)
 	WRAPPER.time.start(120) #start 5 minute timer
 	WRAPPER.time.timeout.connect(func(): WRAPPER.change_to_scene(WRAPPER.SCENES.END))
 

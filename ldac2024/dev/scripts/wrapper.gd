@@ -23,6 +23,7 @@ func change_to_scene(scene_id:SCENES):
 	reset_ui()
 	match scene_id:
 		SCENES.DEV:
+			time = Timer.new()
 			current_scene = dev_scene.instantiate()
 			add_child(current_scene)
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -138,4 +139,4 @@ func order_fail(box:Scannable):
 	else:
 		box.queue_free()
 
-var time = Timer.new()
+var time:Timer
