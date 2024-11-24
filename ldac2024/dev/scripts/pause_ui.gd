@@ -7,8 +7,3 @@ extends Control
 func _ready() -> void:
 	main_menu.pressed.connect(func(): WRAPPER.change_to_scene(WRAPPER.SCENES.MAIN_MENU))
 	options.pressed.connect(func(): pass ) #toggle options ui
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

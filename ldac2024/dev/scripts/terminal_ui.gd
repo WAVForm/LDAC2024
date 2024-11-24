@@ -26,7 +26,3 @@ func add_order(item):
 		var item_window = WRAPPER.ui_node_list.back()
 		item_window.initialize(item)
 	)
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
