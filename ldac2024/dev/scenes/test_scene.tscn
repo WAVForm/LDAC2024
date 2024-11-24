@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bqryoln0hlt07"]
+[gd_scene load_steps=26 format=3 uid="uid://bqryoln0hlt07"]
 
 [ext_resource type="Script" path="res://dev/scripts/test_scene.gd" id="1_0lfjr"]
 [ext_resource type="PackedScene" uid="uid://c8ss7ie85eom7" path="res://dev/scenes/gameobjects/player.tscn" id="2_o1kdk"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://x18xtduft8i6" path="res://dev/scenes/gameobjects/pallet.tscn" id="4_1ubun"]
 [ext_resource type="PackedScene" uid="uid://dw4n5e60sue1h" path="res://models/level_blockout.fbx" id="5_kpspt"]
 [ext_resource type="PackedScene" uid="uid://ppyi5lebys11" path="res://dev/scenes/gameobjects/shelf.tscn" id="6_u2lgs"]
-[ext_resource type="ArrayMesh" uid="uid://62hgkadt8ubr" path="res://models/floor.tres" id="7_lah7v"]
+[ext_resource type="ArrayMesh" uid="uid://bx083ai6wm7r4" path="res://models/floor.tres" id="7_lah7v"]
 [ext_resource type="PackedScene" uid="uid://ue3eegi4kuys" path="res://dev/scenes/models/robot.tscn" id="10_umtfg"]
 [ext_resource type="PackedScene" uid="uid://mnv13k25rjvo" path="res://dev/scenes/models/trucks_+_wall.tscn" id="11_cwllu"]
 [ext_resource type="PackedScene" uid="uid://dgwfjie26rips" path="res://dev/scenes/models/blank_wall.tscn" id="11_xcean"]
@@ -17,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://bhlqkab47sraj" path="res://dev/scenes/models/ceiling_sprinkler.tscn" id="15_6d835"]
 [ext_resource type="PackedScene" uid="uid://b0xtbhxnhr7ig" path="res://dev/scenes/models/ceilling_fan.tscn" id="16_ow841"]
 [ext_resource type="PackedScene" uid="uid://ckbvyuk0fcqu2" path="res://dev/scenes/models/ladder.tscn" id="17_s1k0x"]
+[ext_resource type="Script" path="res://dev/scenes/robot.gd" id="18_f5o7c"]
+[ext_resource type="Script" path="res://dev/scenes/ROBOT_01.gd" id="19_xjqvr"]
+[ext_resource type="ArrayMesh" uid="uid://chdgphfqkconr" path="res://models/big robot.tres" id="20_17i5n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l3xax"]
 size = Vector3(198.65, 0.001, 281.596)
@@ -29,6 +32,27 @@ glow_intensity = 2.77
 glow_bloom = 1.0
 adjustment_enabled = true
 adjustment_saturation = 0.5
+
+[sub_resource type="Curve3D" id="Curve3D_bxmax"]
+_data = {
+"points": PackedVector3Array(2.75153, 0, -1.806, -2.75153, 0, 1.806, 131.423, 0, 2.95049, 1.52468, 0, 1.24001, -1.52468, 0, -1.24001, 38.2027, 0, 3.58774, -1.45656, 0, 2.09381, 1.45656, 0, -2.09381, 38.2937, 0, -3.87715, -0.728302, 0, 2.82209, 0.728302, 0, -2.82209, 128.237, 0, -3.96819, 1.09243, 0, 1.72967, -1.09243, 0, -1.72967, 127.599, 0, -11.8883, 1.09242, 0, 2.73106, -1.09242, 0, -2.73106, 38.2027, 0, -11.7972, -0.861626, 0, 0.530231, 0.861626, 0, -0.530231, 39.1285, 0, -18.6399, -3.38022, 0, -0.662788, 3.38022, 0, 0.662788, 130.129, 0, -18.4411, 2.82211, 0, -3.27727, -2.82211, 0, 3.27727, 131.423, 0, 2.95049),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+
+[sub_resource type="Curve3D" id="Curve3D_7u7ex"]
+_data = {
+"points": PackedVector3Array(-2.76941, 0, 3.76606, 2.76941, 0, -3.76606, 23.1778, 0, 95.917, 8.83198, 0, 11.225, -8.83198, 0, -11.225, 22.5159, 0, -121.72, 8.05541, 0, -10.5514, -8.05541, 0, 10.5514, -17.3873, 0, -121.452, -7.61531, 0, -6.82779, 7.61531, 0, 6.82779, -15.8135, 0, -22.9081, -7.91034, 0, -6.36407, 7.91034, 0, 6.36407, 16.3003, 0, -22.5602, 3.30976, 0, -5.85859, -3.30976, 0, 5.85859, 15.955, 0, 48.7653, 5.44791, 0, -5.10481, -5.44791, 0, 5.10481, -24.4463, 0, 48.4173, -4.56388, 0, -5.17324, 4.56388, 0, 5.17324, -24.101, 0, 94.3439, -7.96889, 0, 4.91445, 7.96889, 0, -4.91445, 23.1776, 0, 95.9171),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+
+[sub_resource type="Curve3D" id="Curve3D_w282q"]
+_data = {
+"points": PackedVector3Array(0.174115, 0, 0.638425, -0.174115, 0, -0.638425, -3.52576, 0, -8.63258, -3.79543, 0, 0.12113, 3.79543, 0, -0.12113, 0.132177, 0, -12.2594, 0.048115, 0, -1.10723, -0.048115, 0, 1.10723, 3.87733, 0, -7.55467, 2.9693, 0, 0.164962, -2.9693, 0, -0.164962, -0.00613129, 0, -4.52412, 0.389282, 0, 1.20884, -0.389282, 0, -1.20884, -3.51669, 0, -8.63787),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [node name="devtest" type="Node3D"]
 script = ExtResource("1_0lfjr")
@@ -166,7 +190,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1015, -0.0152471, -22.5515
 shape = SubResource("BoxShape3D_l3xax")
 
 [node name="robot" parent="." instance=ExtResource("10_umtfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3084, 0.115095, -7.87686)
 
 [node name="cams" type="Node" parent="."]
 
@@ -282,3 +306,42 @@ environment = SubResource("Environment_ejvy7")
 
 [node name="ladder" parent="." instance=ExtResource("17_s1k0x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00686, 0, 13.8608)
+
+[node name="robots" type="Node3D" parent="."]
+
+[node name="Path3D2" type="Path3D" parent="robots"]
+transform = Transform3D(1.04349, 0, 0, 0, 1, 0, 0, 0, 1.03564, -3.55616, 0, -0.6774)
+curve = SubResource("Curve3D_bxmax")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="robots/Path3D2"]
+transform = Transform3D(-0.548722, 0, 0.836004, 0, 1, 0, -0.836004, 0, -0.548722, 131.423, 0, 2.95049)
+script = ExtResource("19_xjqvr")
+
+[node name="robot3" parent="robots/Path3D2/PathFollow3D" instance=ExtResource("10_umtfg")]
+transform = Transform3D(-1.82, 0, -1.19209e-07, 0, 1.82, 0, 1.19209e-07, 0, -1.82, -1.6955, 0, 2.14638)
+
+[node name="Path3D" type="Path3D" parent="robots/Path3D2"]
+curve = SubResource("Curve3D_7u7ex")
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="robots/Path3D2/Path3D"]
+transform = Transform3D(0.805604, 0, -0.592409, 0, 1, 0, 0.592408, 0, 0.805604, 23.1778, 0, 95.917)
+script = ExtResource("19_xjqvr")
+
+[node name="Path3D" type="Path3D" parent="robots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0193443, 0, 0)
+curve = SubResource("Curve3D_w282q")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="robots/Path3D"]
+transform = Transform3D(0.971036, 0, 0.238798, 0, 1, 0, -0.238798, 0, 0.971036, -3.34788, 0, -8.00707)
+progress = 23.7018
+script = ExtResource("18_f5o7c")
+
+[node name="robot2" parent="robots/Path3D/PathFollow3D" instance=ExtResource("10_umtfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121692, -0.00777389, -0.3074)
+
+[node name="BigRobot" type="MeshInstance3D" parent="robots"]
+transform = Transform3D(9.19474, 0, 0, 0, -4.01915e-07, 9.19474, 0, -9.19474, -4.01915e-07, 24.2787, -0.0222568, 80.2257)
+mesh = ExtResource("20_17i5n")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="robots/BigRobot"]

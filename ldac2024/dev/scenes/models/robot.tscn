@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ue3eegi4kuys"]
+[gd_scene load_steps=5 format=3 uid="uid://ue3eegi4kuys"]
 
 [ext_resource type="PackedScene" uid="uid://bn6luvpwmpaox" path="res://Abigail_modles/robot.fbx" id="1_8se08"]
 [ext_resource type="Texture2D" uid="uid://b7tedcuk8a6hs" path="res://textures/additional_textures_gradient.png" id="2_2qfnb"]
@@ -6,7 +6,17 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6g5s"]
 albedo_texture = ExtResource("2_2qfnb")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8mmv"]
+size = Vector3(1.10969, 1, 1.21439)
+
 [node name="robot" instance=ExtResource("1_8se08")]
 
 [node name="Box204" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_j6g5s")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0297127, 0.507628, -0.000167847)
+shape = SubResource("BoxShape3D_c8mmv")
