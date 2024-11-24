@@ -9,13 +9,13 @@ func _ready() -> void:
 	input_limit_timer.one_shot = true
 	add_child(input_limit_timer)
 	add_child(order_timer)
-	order_timer.start(randi_range(30,60))
+	order_timer.start(randi_range(20,30))
 	order_timer.timeout.connect(func():
 		var item = Item.Items.pick_random()
 		order_to_random_box(item)
 	)
 	WRAPPER.add_nec_ui(WRAPPER.UIS.PLAYER)
-	self.add_child(WRAPPER.time)
+	add_child(WRAPPER.time)
 	WRAPPER.time.start(120) #start 5 minute timer
 	WRAPPER.time.timeout.connect(func(): WRAPPER.change_to_scene(WRAPPER.SCENES.END))
 
