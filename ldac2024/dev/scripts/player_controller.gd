@@ -2,10 +2,10 @@ extends CharacterBody3D
 
 @onready var pov:Node3D = $pov
 
-const SPEED_GAIN = 0.2
+const SPEED_GAIN = 0.5
 const SPEED_LOSS = 2
-const MAX_SPEED = 8.0
-const JUMP_POWER = 2.0
+const MAX_SPEED = 16
+const JUMP_POWER = 5
 
 var current_speed = 0.0
 @onready var ray = pov.get_node("selection_ray") as RayCast3D
@@ -35,7 +35,7 @@ func _input(event):
 		if r.is_colliding() and r.get_collider().has_method("use"):
 			var returned = r.get_collider().use()
 			if returned != null and returned is Scannable:
-				place_in_inventory(returned)
+				place_in_inventory(returned.duplicate())
 	
 	elif event.is_action_pressed("remove"):
 		if not inventory.is_empty():

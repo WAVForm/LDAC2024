@@ -2,13 +2,15 @@ extends Node3D
 
 class_name Scannable
 
-var item:Item
+var item:Item = null
 
 var scanned:bool = false
 
 func scan():
-	scanned = true
-	return item
+	if item != null:
+		scanned = true
+		return item
 	
 func use():
-	return self if scanned else null
+	if item != null:
+		return self if scanned else null

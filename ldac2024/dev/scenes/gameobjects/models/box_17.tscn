@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4da1cegwew85"]
+[gd_scene load_steps=4 format=3 uid="uid://b4da1cegwew85"]
 
 [ext_resource type="ArrayMesh" uid="uid://cfh1mnqbqgbl5" path="res://models/box_17.tres" id="1_fw42g"]
+[ext_resource type="Script" path="res://dev/scripts/objects/scannable.gd" id="1_knaup"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35hx3"]
 size = Vector3(13.2583, 13.8002, 10.042)
 
 [node name="box17" type="Node3D"]
 transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0, 0, 0)
+script = ExtResource("1_knaup")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_fw42g")

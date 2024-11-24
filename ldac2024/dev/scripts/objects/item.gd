@@ -17,9 +17,16 @@ static var Items:Array[Item] = [Headphones, CoyoteUrine, MetalWaterBottle, NickC
 @export var truck: int
 @export var image: Image
 
-func _init(p_title:String, p_desc: String, p_coords: Vector3i, p_truck: int, p_imgpath: String) -> void:
-	title = p_title
-	description = p_desc
-	coords = p_coords
-	truck = p_truck
-	image = Image.load_from_file(p_imgpath)
+func _init(p, p_desc: String="", p_coords: Vector3i=Vector3i(0,0,0), p_truck: int=0, p_imgpath: String="") -> void:
+	if p is Item:
+		title = p.title
+		description = p.description
+		coords = p.coords
+		truck = p.truck
+		image = p.image
+	else:
+		title = p
+		description = p_desc
+		coords = p_coords
+		truck = p_truck
+		image = Image.load_from_file(p_imgpath)

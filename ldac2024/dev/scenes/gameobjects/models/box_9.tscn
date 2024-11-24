@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5gxhk1s47mnv"]
+[gd_scene load_steps=4 format=3 uid="uid://b5gxhk1s47mnv"]
 
 [ext_resource type="ArrayMesh" uid="uid://ckpohiknhsv0s" path="res://models/box_9.tres" id="1_k8qpe"]
+[ext_resource type="Script" path="res://dev/scripts/objects/scannable.gd" id="1_nbddq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mk3ul"]
-size = Vector3(14.0645, 13.8002, 10.042)
+size = Vector3(14.0939, 14.7235, 10.042)
 
 [node name="box9" type="Node3D"]
 transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0, 0, 0)
+script = ExtResource("1_nbddq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_k8qpe")
@@ -14,5 +16,5 @@ mesh = ExtResource("1_k8qpe")
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022995, -0.0196175, -4.88318)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0376926, 0.0325556, -4.88318)
 shape = SubResource("BoxShape3D_mk3ul")

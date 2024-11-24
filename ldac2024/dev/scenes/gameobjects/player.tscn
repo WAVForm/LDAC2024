@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8ss7ie85eom7"]
+[gd_scene load_steps=7 format=3 uid="uid://c8ss7ie85eom7"]
 
 [ext_resource type="Script" path="res://dev/scripts/player_controller.gd" id="1_roadn"]
 [ext_resource type="Script" path="res://dev/scripts/scanner_laser.gd" id="2_brp30"]
@@ -12,10 +12,23 @@ height = 0.5
 radius = 0.1
 height = 0.5
 
+[sub_resource type="Environment" id="Environment_gyv0m"]
+background_mode = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.0
+glow_intensity = 2.51
+glow_bloom = 0.05
+fog_mode = 1
+fog_density = 1.0
+fog_depth_begin = 0.0
+adjustment_enabled = true
+adjustment_saturation = 0.5
+
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_roadn")
 
 [node name="model" type="MeshInstance3D" parent="."]
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_uxkk7")
 
 [node name="collider" type="CollisionShape3D" parent="."]
@@ -64,3 +77,6 @@ cull_mask = 512
 
 [node name="scanner" parent="view_container/view/Node3D" instance=ExtResource("2_p5kjo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.05, -0.25)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gyv0m")

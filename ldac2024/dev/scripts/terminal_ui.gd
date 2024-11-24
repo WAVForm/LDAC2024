@@ -5,9 +5,9 @@ var order_prefab = load("res://dev/scenes/uis/terminal/terminal_order.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if not WRAPPER.orders.is_empty():
-		for order in WRAPPER.orders:
-			add_order(order)
+	if not WRAPPER.boxes.is_empty():
+		for box in WRAPPER.boxes:
+			add_order(box.item)
 	close.pressed.connect(func(): if WRAPPER.ui_state_list.back() == WRAPPER.UIS.TERMINAL: 
 		WRAPPER.prev_sub_ui()
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

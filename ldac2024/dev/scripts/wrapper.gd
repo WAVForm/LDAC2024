@@ -102,10 +102,12 @@ func toggle_mouse_mode(prev):
 	Input.mouse_mode = prev if ui_node_list.is_empty() else Input.mouse_mode
 	
 #Orders
-var orders:Array
+var boxes:Array
 signal new_order_in(item:Item)
 
 func _input(event):
 	if event.is_action_pressed("ui_page_up"):
-		new_order_in.emit(Item.Items.pick_random())
-		orders.append(Item.Items.pick_random())
+		var i = Item.Items.pick_random()
+		var o:Item = Item.new(i)
+		new_order_in.emit(o)
+		
