@@ -12,7 +12,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func place_on(s:Scannable):
-	for i in range(48):
+	for i in range(get_node("points").get_child_count()):
 		var n = get_node("points/0"+str(i)) if i < 10 else get_node("points/"+str(i))
 		if n.get_child_count() == 0:
 			s.collision_layer = 2

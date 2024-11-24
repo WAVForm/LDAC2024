@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmfjgpkmwj288"]
+[gd_scene load_steps=4 format=3 uid="uid://bmfjgpkmwj288"]
 
 [ext_resource type="Script" path="res://dev/scripts/main_menu.gd" id="1_g7edu"]
+[ext_resource type="Texture2D" uid="uid://d3r5qy8yqq0yl" path="res://2d asset/asset_2d_TitleScreen.png" id="2_hrl44"]
+[ext_resource type="Texture2D" uid="uid://cpkb3ar2pq11h" path="res://2d asset/asset_2d_TitleIcon.png" id="3_4b48e"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -13,27 +15,49 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 script = ExtResource("1_g7edu")
 
-[node name="menu_container" type="VBoxContainer" parent="."]
+[node name="bg" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -99.5
-offset_right = 99.5
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_hrl44")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 150.0
+offset_bottom = 150.0
+texture = ExtResource("3_4b48e")
+expand_mode = 1
+
+[node name="menu_container" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 200.0
+offset_top = 50.0
+offset_right = 805.0
+offset_bottom = 138.0
+alignment = 1
 
 [node name="title" type="Label" parent="menu_container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "Menu
-"
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "Generic Warehouse"
 
-[node name="button_container" type="VBoxContainer" parent="menu_container"]
+[node name="button_container" type="VBoxContainer" parent="."]
 layout_mode = 2
+offset_left = 150.0
+offset_top = 200.0
+offset_right = 233.0
+offset_bottom = 253.0
 size_flags_vertical = 3
 
-[node name="test_scene_button" type="Button" parent="menu_container/button_container"]
+[node name="test_scene_button" type="Button" parent="button_container"]
 layout_mode = 2
-text = "Test Scene"
+theme_override_font_sizes/font_size = 64
+text = "Start"

@@ -12,7 +12,9 @@ func _ready() -> void:
 	WRAPPER.new_order_in.connect(func(item):
 		order_to_random_box(item)
 	)
-	pass # Replace with function body.
+	self.add_child(WRAPPER.time)
+	WRAPPER.time.start(300) #start 5 minute timer
+	WRAPPER.timeout.connect()
 
 func _input(event):
 	if event is InputEventKey and event.keycode == KEY_ESCAPE and (input_limit_timer.is_stopped() || input_limit_timer.time_left <= 0):
@@ -21,7 +23,7 @@ func _input(event):
 		WRAPPER.toggle_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func order_to_random_box(item:Item):
-	item.truck = randi_range(1,6)
+	item.truck = randi_range(1,4)
 	var shelf = $shelves.get_children().pick_random() #pick random shelf
 	var spot = str(randi_range(0,19)) + str(randi_range(0,1)) #pick random spot
 	print(shelf.name)
