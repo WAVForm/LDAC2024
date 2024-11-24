@@ -103,6 +103,7 @@ func turn_pov(input_dir:Vector2):
 func place_in_inventory(box):
 	if box.original:
 		box.get_node("MeshInstance3D").set_surface_override_material(0, null)
+		box.item = null
 		var o = box.duplicate()
 		o.original = false
 		o.item = box.item

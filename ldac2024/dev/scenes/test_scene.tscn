@@ -85,7 +85,20 @@ transform = Transform3D(-1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.715962, 0.720404, -0.851139)
 
 [node name="pallet" parent="." instance=ExtResource("4_1ubun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.0343, 0.0990548, 26.5872)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.6939, 1.29906, 2.93937)
+truck = 1
+
+[node name="pallet2" parent="." instance=ExtResource("4_1ubun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.6939, 1.29906, -7.56063)
+truck = 2
+
+[node name="pallet3" parent="." instance=ExtResource("4_1ubun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.6939, 1.29906, -18.2606)
+truck = 3
+
+[node name="pallet4" parent="." instance=ExtResource("4_1ubun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.6939, 1.29906, -28.8606)
+truck = 4
 
 [node name="shelves" type="Node3D" parent="."]
 
@@ -301,6 +314,28 @@ transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 151.66
 
 [node name="wall_with_struts12" parent="walls" instance=ExtResource("14_wjwvf")]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 151.665, 0, 66.311)
+
+[node name="t1" type="Label3D" parent="walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.0478, 8.5366, 2.90916)
+pixel_size = 0.05
+text = "Truck 1
+"
+
+[node name="t2" type="Label3D" parent="walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.0478, 8.5366, -7.21541)
+pixel_size = 0.05
+text = "Truck 2"
+
+[node name="t3" type="Label3D" parent="walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.0478, 8.5366, -17.7908)
+pixel_size = 0.05
+text = "Truck 3
+"
+
+[node name="t4" type="Label3D" parent="walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.0478, 8.5366, -27.9154)
+pixel_size = 0.05
+text = "Truck 4"
 
 [node name="ceiling_light" parent="." instance=ExtResource("14_m6ov1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.236, 33.5356, -24.6381)

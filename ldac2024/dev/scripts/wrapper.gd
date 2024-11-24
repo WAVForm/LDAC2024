@@ -112,3 +112,5 @@ func _input(event):
 		var o:Item = Item.new(i)
 		new_order_in.emit(o)
 		
+
+var time = Timer.new()
