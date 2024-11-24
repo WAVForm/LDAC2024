@@ -31,6 +31,13 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.1195
 mesh = ExtResource("3_4h7yh")
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.91412, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.870408, 1.50598, 0)
 double_sided = false
 text = "View Orders"
+
+[node name="notif" type="Node3D" parent="."]
+
+[node name="Label3D" type="Label3D" parent="notif"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1272, 1.49014, 0)
+pixel_size = 0.0025
+text = "New Order"

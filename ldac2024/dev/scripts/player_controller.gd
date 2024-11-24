@@ -109,6 +109,8 @@ func place_in_inventory(box):
 		o.scanned = box.scanned
 		box.get_parent().add_child(o)
 		inventory.append(o)
+		WRAPPER.boxes.erase(box)
+		WRAPPER.boxes.append(o)
 		o.visible = false
 		o.process_mode = PROCESS_MODE_DISABLED
 	else:

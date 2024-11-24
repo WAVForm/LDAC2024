@@ -11,8 +11,3 @@ func initialize(item:Item):
 func _ready() -> void:
 	$exit.pressed.connect(func(): WRAPPER.prev_sub_ui())
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

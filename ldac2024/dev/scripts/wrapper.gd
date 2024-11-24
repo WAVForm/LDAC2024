@@ -24,6 +24,7 @@ func change_to_scene(scene_id:SCENES):
 			current_scene = dev_scene.instantiate()
 			add_child(current_scene)
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			boxes = []
 		SCENES.MAIN_MENU:
 			current_scene = main_menu_scene.instantiate()
 			add_child(current_scene)
@@ -102,7 +103,7 @@ func toggle_mouse_mode(prev):
 	Input.mouse_mode = prev if ui_node_list.is_empty() else Input.mouse_mode
 	
 #Orders
-var boxes:Array
+var boxes:Array[Scannable]
 signal new_order_in(item:Item)
 
 func _input(event):

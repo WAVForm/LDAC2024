@@ -12,11 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://dgwfjie26rips" path="res://dev/scenes/models/blank_wall.tscn" id="11_xcean"]
 [ext_resource type="PackedScene" uid="uid://cvo70ljxfgl4e" path="res://dev/scenes/models/securiy_camera.tscn" id="12_lxtr1"]
 [ext_resource type="PackedScene" uid="uid://cywnpxkim8iy1" path="res://dev/scenes/models/fire_alarm.tscn" id="13_htgyg"]
-[ext_resource type="PackedScene" uid="uid://dcofq6icnnfqm" path="res://dev/scenes/models/ceiling_light.tscn" id="14_m6ov1"]
+[ext_resource type="PackedScene" path="res://dev/scenes/models/ceiling_light.tscn" id="14_m6ov1"]
 [ext_resource type="PackedScene" uid="uid://desyxf6l8bq4m" path="res://dev/scenes/models/wall_with_struts.tscn" id="14_wjwvf"]
-[ext_resource type="PackedScene" uid="uid://bhlqkab47sraj" path="res://dev/scenes/models/ceiling_sprinkler.tscn" id="15_6d835"]
-[ext_resource type="PackedScene" uid="uid://b0xtbhxnhr7ig" path="res://dev/scenes/models/ceilling_fan.tscn" id="16_ow841"]
-[ext_resource type="PackedScene" uid="uid://ckbvyuk0fcqu2" path="res://dev/scenes/models/ladder.tscn" id="17_s1k0x"]
+[ext_resource type="PackedScene" path="res://dev/scenes/models/ceiling_sprinkler.tscn" id="15_6d835"]
+[ext_resource type="PackedScene" path="res://dev/scenes/models/ceilling_fan.tscn" id="16_ow841"]
+[ext_resource type="PackedScene" path="res://dev/scenes/models/ladder.tscn" id="17_s1k0x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l3xax"]
 size = Vector3(198.65, 0.001, 281.596)
@@ -51,7 +51,7 @@ transform = Transform3D(-1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.715962, 0.720404, -0.851139)
 
 [node name="pallet" parent="." instance=ExtResource("4_1ubun")]
-transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, -20.0343, 0.0990548, 26.5872)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.0343, 0.0990548, 26.5872)
 
 [node name="shelves" type="Node3D" parent="."]
 

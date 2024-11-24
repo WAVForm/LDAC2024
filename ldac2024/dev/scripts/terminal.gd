@@ -1,13 +1,12 @@
 extends StaticBody3D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var notif = $notif
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _ready():
+	WRAPPER.new_order_in.connect(func(item):
+		notif.visible = true
+	)
 
 func use():
 	WRAPPER.add_sub_ui(WRAPPER.UIS.TERMINAL)
-	
+	notif.visible = false
