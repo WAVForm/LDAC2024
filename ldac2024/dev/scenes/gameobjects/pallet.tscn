@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://x18xtduft8i6"]
 
 [ext_resource type="Script" path="res://dev/scripts/pallet.gd" id="1_o7h8t"]
-[ext_resource type="ArrayMesh" uid="uid://uolfxsv03rwe" path="res://models/pallet.tres" id="2_4qjum"]
+[ext_resource type="ArrayMesh" path="res://models/pallet.tres" id="2_4qjum"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bcbj1"]
 size = Vector3(7.49159, 22.08, 7.76659)

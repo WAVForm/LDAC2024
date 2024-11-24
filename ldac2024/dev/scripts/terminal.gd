@@ -3,7 +3,7 @@ extends StaticBody3D
 @onready var notif = $notif
 
 func _ready():
-	WRAPPER.new_order_in.connect(func(item):
+	WRAPPER.new_order_in.connect(func(s):
 		notif.visible = true
 	)
 

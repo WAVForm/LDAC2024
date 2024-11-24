@@ -11,9 +11,11 @@ func _ready() -> void:
 #Scenes
 var current_scene = null
 var scene_state:SCENES = SCENES.NONE
-enum SCENES {NONE, DEV, MAIN_MENU}
+enum SCENES {NONE, DEV, MAIN_MENU, CREDIT, END}
 var dev_scene = load("res://dev/scenes/test_scene.tscn")
 var main_menu_scene = load("res://dev/scenes/main_menu.tscn")
+var credit_scene = load("res://dev/scenes/uis/credit.tscn")
+var end_scene = load("res://dev/scenes/uis/end.tscn")
 
 func change_to_scene(scene_id:SCENES):
 	if current_scene != null:
@@ -21,12 +23,21 @@ func change_to_scene(scene_id:SCENES):
 	reset_ui()
 	match scene_id:
 		SCENES.DEV:
+			time = Timer.new()
 			current_scene = dev_scene.instantiate()
 			add_child(current_scene)
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			boxes = []
 		SCENES.MAIN_MENU:
 			current_scene = main_menu_scene.instantiate()
+			add_child(current_scene)
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		SCENES.CREDIT:
+			current_scene = credit_scene.instantiate()
+			add_child(current_scene)
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		SCENES.END:
+			current_scene = end_scene.instantiate()
 			add_child(current_scene)
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		_:
@@ -104,13 +115,28 @@ func toggle_mouse_mode(prev):
 	
 #Orders
 var boxes:Array[Scannable]
-signal new_order_in(item:Item)
+signal new_order_in(s:Scannable)
 
-func _input(event):
-	if event.is_action_pressed("ui_page_up"):
-		var i = Item.Items.pick_random()
-		var o:Item = Item.new(i)
-		new_order_in.emit(o)
-		
+func order_done(box:Scannable):
+	boxes.erase(box)
+	time.wait_time += 10
+	time.start(time.wait_time)
+	
+func order_fail(box:Scannable):
+	boxes.erase(box)
+	print(time.wait_time)
+	if time.wait_time - 30 <= 0:
+		time.wait_time = 0.01
+	else:
+		time.wait_time -= 30
+	time.start(time.wait_time)
+	if box.original:
+		box.item = null
+		box.scanned = false
+		box.started = false
+		box.outline(false)
+		box.time = Timer.new()
+	else:
+		box.queue_free()
 
-var time = Timer.new()
+var time:Timer
