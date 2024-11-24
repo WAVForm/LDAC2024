@@ -23,7 +23,7 @@ func _ready() -> void:
 	for i in range(20):
 		for j in range(2):
 			var b = boxes.pick_random().instantiate()
-			b.get_node("RigidBody3D").freeze = true
+			b.freeze = true
 			self.get_node("slots/"+str(i)+str(j)).add_child(b)
 	pass # Replace with function body.
 

@@ -2,7 +2,6 @@ extends Node3D
 
 var input_limit_timer = Timer.new()
 @onready var box_spawn = $box_spawn
-var scannable = load("res://dev/scenes/gameobjects/scannable.tscn")
 var outline_material = load("res://materials/outline.tres")
 
 # Called when the node enters the scene tree for the first time.

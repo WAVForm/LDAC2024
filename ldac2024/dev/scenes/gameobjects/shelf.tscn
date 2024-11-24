@@ -1,17 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://ppyi5lebys11"]
+[gd_scene load_steps=5 format=3 uid="uid://ppyi5lebys11"]
 
 [ext_resource type="Script" path="res://dev/scenes/gameobjects/shelf.gd" id="1_7ptc0"]
 [ext_resource type="ArrayMesh" uid="uid://cf4tyn4y2d5ke" path="res://models/shelf.tres" id="1_swvti"]
-[ext_resource type="Texture2D" uid="uid://b7tedcuk8a6hs" path="res://textures/additional_textures_gradient.png" id="2_t867w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c22q8"]
 size = Vector3(1.55447, 29.389, 6.35162)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jgxao"]
 size = Vector3(41.2303, 1.1361, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_upigr"]
-albedo_texture = ExtResource("2_t867w")
 
 [node name="shelf" type="Node3D"]
 script = ExtResource("1_7ptc0")
@@ -53,84 +49,83 @@ shape = SubResource("BoxShape3D_jgxao")
 [node name="model" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 mesh = ExtResource("1_swvti")
-surface_material_override/0 = SubResource("StandardMaterial3D_upigr")
 
 [node name="slots" type="Node3D" parent="."]
 
 [node name="00" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.559232, 3)
 
 [node name="01" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.56697, 3)
 
 [node name="10" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.572063, 3)
 
 [node name="11" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0.556089, 3)
 
 [node name="20" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.569203, 3)
 
 [node name="21" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.55712, 3)
 
 [node name="30" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0.54694, 3)
 
 [node name="31" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0.554234, 3)
 
 [node name="40" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 5.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 6.04832, 3)
 
 [node name="41" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 6.03737, 3)
 
 [node name="50" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 5.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 6.07298, 3)
 
 [node name="51" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 5.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 6.05796, 3)
 
 [node name="60" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 5.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 6.06051, 3)
 
 [node name="61" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 5.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 6.0468, 3)
 
 [node name="70" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 5.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 6.04069, 3)
 
 [node name="71" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 5.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 6.03596, 3)
 
 [node name="80" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 10.7, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 10.7234, 3)
 
 [node name="81" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 10.7, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 10.7407, 3)
 
 [node name="90" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 10.7, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 10.7219, 3)
 
 [node name="91" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 10.7, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 10.7238, 3)
 
 [node name="100" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 10.7, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 10.7266, 3)
 
 [node name="101" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 10.7, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 10.7297, 3)
 
 [node name="110" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 10.7, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 10.7356, 3)
 
 [node name="111" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 10.7, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 10.7223, 3)
 
 [node name="120" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 16.2, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 17.6503, 3)
 
 [node name="121" type="Node3D" parent="slots"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 17.7, 3)
@@ -154,25 +149,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 17.7, 3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 17.7, 3)
 
 [node name="160" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 22.6, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 22.5127, 3)
 
 [node name="161" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 22.6, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 22.5064, 3)
 
 [node name="170" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 22.6, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 22.5083, 3)
 
 [node name="171" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 22.6, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 22.5257, 3)
 
 [node name="180" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 22.6, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 22.5199, 3)
 
 [node name="181" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 22.6, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 22.5138, 3)
 
 [node name="190" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 22.6, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 22.5128, 3)
 
 [node name="191" type="Node3D" parent="slots"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 22.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 22.5249, 3)

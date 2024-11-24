@@ -1,12 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://bqryoln0hlt07"]
+[gd_scene load_steps=17 format=3 uid="uid://bqryoln0hlt07"]
 
 [ext_resource type="Script" path="res://dev/scripts/test_scene.gd" id="1_0lfjr"]
 [ext_resource type="PackedScene" uid="uid://c8ss7ie85eom7" path="res://dev/scenes/gameobjects/player.tscn" id="2_o1kdk"]
 [ext_resource type="PackedScene" uid="uid://b5qkk5jvj1oal" path="res://dev/scenes/gameobjects/terminal.tscn" id="3_7tqby"]
-[ext_resource type="PackedScene" path="res://dev/scenes/gameobjects/pallet.tscn" id="4_1ubun"]
+[ext_resource type="PackedScene" uid="uid://x18xtduft8i6" path="res://dev/scenes/gameobjects/pallet.tscn" id="4_1ubun"]
 [ext_resource type="PackedScene" uid="uid://dw4n5e60sue1h" path="res://models/level_blockout.fbx" id="5_kpspt"]
-[ext_resource type="PackedScene" path="res://dev/scenes/gameobjects/shelf.tscn" id="6_u2lgs"]
-[ext_resource type="ArrayMesh" uid="uid://yeanayr40o1k" path="res://models/floor.tres" id="7_lah7v"]
+[ext_resource type="PackedScene" uid="uid://ppyi5lebys11" path="res://dev/scenes/gameobjects/shelf.tscn" id="6_u2lgs"]
+[ext_resource type="ArrayMesh" uid="uid://62hgkadt8ubr" path="res://models/floor.tres" id="7_lah7v"]
 [ext_resource type="PackedScene" uid="uid://byhfl7emxgqf5" path="res://Abigail_modles/ladder.fbx" id="10_tqgjf"]
 [ext_resource type="PackedScene" uid="uid://ue3eegi4kuys" path="res://dev/scenes/models/robot.tscn" id="10_umtfg"]
 [ext_resource type="PackedScene" uid="uid://mnv13k25rjvo" path="res://dev/scenes/models/trucks_+_wall.tscn" id="11_cwllu"]
@@ -17,6 +17,18 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l3xax"]
 size = Vector3(198.65, 0.001, 281.596)
+
+[sub_resource type="Environment" id="Environment_dfd7g"]
+background_mode = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.1
+glow_intensity = 2.51
+glow_bloom = 0.05
+fog_mode = 1
+fog_density = 1.0
+fog_depth_begin = 0.0
+adjustment_enabled = true
+adjustment_saturation = 0.5
 
 [node name="devtest" type="Node3D"]
 script = ExtResource("1_0lfjr")
@@ -258,3 +270,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 152.55
 
 [node name="wall_with_struts12" parent="walls" instance=ExtResource("14_wjwvf")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 152.556, 0, 66.3114)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dfd7g")

@@ -29,3 +29,8 @@ shape = SubResource("BoxShape3D_g61n0")
 [node name="computer" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.119598, 1, -0.265403)
 mesh = ExtResource("3_4h7yh")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.91412, 0)
+double_sided = false
+text = "View Orders"

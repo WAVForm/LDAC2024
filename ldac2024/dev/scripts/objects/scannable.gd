@@ -5,6 +5,7 @@ class_name Scannable
 var item:Item = null
 
 var scanned:bool = false
+var original:bool = true
 
 func scan():
 	if item != null:

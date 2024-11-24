@@ -6,15 +6,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_mk3ul"]
 size = Vector3(14.0939, 14.7235, 10.042)
 
-[node name="box9" type="Node3D"]
-transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0, 0, 0)
+[node name="box_9" type="RigidBody3D"]
 script = ExtResource("1_nbddq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_k8qpe")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0376926, 0.0325556, -4.88318)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 0.00445514, 1.24018, -0.0112824)
 shape = SubResource("BoxShape3D_mk3ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0, 0, 0)
+mesh = ExtResource("1_k8qpe")
+skeleton = NodePath("")

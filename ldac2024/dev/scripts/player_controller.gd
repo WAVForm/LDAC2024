@@ -5,7 +5,7 @@ extends CharacterBody3D
 const SPEED_GAIN = 0.5
 const SPEED_LOSS = 2
 const MAX_SPEED = 16
-const JUMP_POWER = 5
+const JUMP_POWER = 10
 
 var current_speed = 0.0
 @onready var ray = pov.get_node("selection_ray") as RayCast3D
@@ -35,7 +35,7 @@ func _input(event):
 		if r.is_colliding() and r.get_collider().has_method("use"):
 			var returned = r.get_collider().use()
 			if returned != null and returned is Scannable:
-				place_in_inventory(returned.duplicate())
+				place_in_inventory(returned)
 	
 	elif event.is_action_pressed("remove"):
 		if not inventory.is_empty():
@@ -50,7 +50,7 @@ func _ready():
 	
 
 func _process(_delta):
-	if can_scan and ray.is_colliding() and ray.get_collider().has_method("scan") and ray.get_collider() is Scannable:
+	if can_scan and ray.is_colliding() and ray.get_collider().has_method("scan"):
 		ray.get_collider().scan()
 		var e:= InputEventMouseButton.new()
 		e.pressed = false
@@ -98,13 +98,25 @@ func turn_pov(input_dir:Vector2):
 		pov.rotation_degrees.y += input_dir.x * WRAPPER.CAMERA_SENSITIVITY
 		
 func place_in_inventory(box):
-	inventory.append(box)
-	box.visible = false
-	box.freeze = true
-	
+	if box.original:
+		box.get_node("MeshInstance3D").set_surface_override_material(0, null)
+		var o = box.duplicate()
+		o.original = false
+		o.item = box.item
+		o.scanned = box.scanned
+		box.get_parent().add_child(o)
+		inventory.append(o)
+		o.visible = false
+		o.process_mode = PROCESS_MODE_DISABLED
+	else:
+		inventory.append(box)
+		box.visible = false
+		box.freeze = true
+		box.process_mode = PROCESS_MODE_DISABLED
 	
 func take_out_inventory(box):
 	inventory.erase(box)
-	box.position = inventory_drop_position.global_position
+	box.global_position = inventory_drop_position.global_position
 	box.visible = true
 	box.freeze = false
+	box.process_mode = PROCESS_MODE_INHERIT
