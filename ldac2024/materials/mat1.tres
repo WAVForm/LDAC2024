@@ -3,4 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://b7tedcuk8a6hs" path="res://textures/additional_textures_gradient.png" id="1_2x1u7"]
 
 [resource]
+render_priority = 1
+albedo_color = Color(0.389287, 0.389287, 0.389287, 1)
 albedo_texture = ExtResource("1_2x1u7")
