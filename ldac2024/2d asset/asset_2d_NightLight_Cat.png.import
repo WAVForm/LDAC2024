@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rlmp4s3ei4eb"
-path="res://.godot/imported/terminal_frame.png-3f99f45ff025cbe831a452ec6d133663.ctex"
+uid="uid://c7gqeg5tjjeqq"
+path="res://.godot/imported/asset_2d_NightLight_Cat.png-80fec1b116cee16429bfb600648b006f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/terminal_frame.png"
-dest_files=["res://.godot/imported/terminal_frame.png-3f99f45ff025cbe831a452ec6d133663.ctex"]
+source_file="res://2d asset/asset_2d_NightLight_Cat.png"
+dest_files=["res://.godot/imported/asset_2d_NightLight_Cat.png-80fec1b116cee16429bfb600648b006f.ctex"]
 
 [params]
 

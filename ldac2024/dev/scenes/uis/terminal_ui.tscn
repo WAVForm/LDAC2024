@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjmlu7ranvxh1"]
+[gd_scene load_steps=2 format=3 uid="uid://bjmlu7ranvxh1"]
 
 [ext_resource type="Script" path="res://dev/scripts/terminal_ui.gd" id="1_4513f"]
-[ext_resource type="PackedScene" uid="uid://e8dylytovi50" path="res://dev/scenes/uis/terminal/terminal_order.tscn" id="2_0yq6v"]
 
 [node name="terminal_ui" type="Control"]
 layout_mode = 3
@@ -59,6 +58,3 @@ offset_bottom = 325.0
 grow_vertical = 2
 alignment = 1
 last_wrap_alignment = 1
-
-[node name="terminal_order" parent="orders/orders_container" instance=ExtResource("2_0yq6v")]
-layout_mode = 2

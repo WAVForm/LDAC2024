@@ -1,12 +1,20 @@
 extends Node3D
 
 var input_limit_timer = Timer.new()
+@onready var box_spawn = $box_spawn
+var scannable = load("res://dev/scenes/gameobjects/scannable.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	input_limit_timer.one_shot = true
 	add_child(input_limit_timer)
 	WRAPPER.add_nec_ui(WRAPPER.UIS.PLAYER)
+	WRAPPER.new_order_in.connect(func(item):
+		var s = scannable.instantiate()
+		s.item = item
+		s.position = box_spawn.global_position
+		add_child(s)
+	)
 	pass # Replace with function body.
 
 func _input(event):

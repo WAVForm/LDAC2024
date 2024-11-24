@@ -19,5 +19,5 @@ shape = SubResource("BoxShape3D_04x0h")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123319, 0)
-text = "Scan Me"
+text = "Scan then Use"
 font_size = 12
