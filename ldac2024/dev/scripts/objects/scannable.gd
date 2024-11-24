@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 			outline(true)
 		started = true
 		time.one_shot = true
-		time.start(randi_range(1,5)) #make random time between 1-2 minutes
+		time.start(randi_range(30,60)) #make random time between 1-2 minutes
 		time.timeout.connect(func(): 
 			WRAPPER.order_fail(self)
 		)

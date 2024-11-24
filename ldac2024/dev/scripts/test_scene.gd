@@ -9,7 +9,7 @@ func _ready() -> void:
 	input_limit_timer.one_shot = true
 	add_child(input_limit_timer)
 	add_child(order_timer)
-	order_timer.start(randi_range(30,60))
+	order_timer.start(randi_range(20,30))
 	order_timer.timeout.connect(func():
 		var item = Item.Items.pick_random()
 		order_to_random_box(item)
