@@ -8,6 +8,18 @@ const MAX_SPEED = 16
 const JUMP_POWER = 10
 @export var push = 5
 
+var ladder_array = []
+
+var direction = Vector3()
+var gravity_vec = Vector3()
+var movement = Vector3()
+var snap
+
+enum State{
+	NORMAL,
+	LADDER
+}
+var current_state = State.NORMAL
 
 var current_speed = 0.0
 @onready var ray = pov.get_node("selection_ray") as RayCast3D
@@ -60,6 +72,10 @@ func _process(_delta):
 
 func _physics_process(delta: float) -> void:
 	if WRAPPER.is_ui_open() == true:
+		return
+		
+	if current_state == State.LADDER:
+		lattermove()
 		return
 		
 	# Add the gravity.
@@ -123,3 +139,17 @@ func take_out_inventory(box):
 	box.visible = true
 	box.freeze = false
 	box.process_mode = PROCESS_MODE_INHERIT
+	
+func lattermove():
+	var input_dir := Input.get_vector("move_up", "move_down","move_left", "move_right")
+	
+	if (input_dir.x == 0 && input_dir.y == 0): #user stopped input?
+		current_speed = 0.0
+	else:
+		current_speed = current_speed if current_speed >= MAX_SPEED else current_speed+SPEED_GAIN
+	
+	var direction := (pov.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:#player is moving
+		velocity.y = direction.y * current_speed
+	
+	move()

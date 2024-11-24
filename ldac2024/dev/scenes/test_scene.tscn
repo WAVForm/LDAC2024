@@ -281,4 +281,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5306, 61.2083, 45.2783)
 environment = SubResource("Environment_ejvy7")
 
 [node name="ladder" parent="." instance=ExtResource("17_s1k0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00686, 0, 13.8608)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.70793, 9.53674e-07, 17.6005)
