@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5qkk5jvj1oal"]
+[gd_scene load_steps=7 format=3 uid="uid://b5qkk5jvj1oal"]
 
 [ext_resource type="Script" path="res://dev/scripts/terminal.gd" id="1_mrvh0"]
 [ext_resource type="ArrayMesh" uid="uid://byq13t5jea4hc" path="res://models/desk.tres" id="2_m3p1p"]
 [ext_resource type="ArrayMesh" uid="uid://bpcy7kk25rtx0" path="res://models/computer.tres" id="3_4h7yh"]
+[ext_resource type="ArrayMesh" uid="uid://ehmhmf2r68by" path="res://models/exclamation_point.tres" id="4_ichco"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0sok4"]
 size = Vector3(1.40206, 0.701375, 1.14616)
@@ -31,6 +32,18 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.1195
 mesh = ExtResource("3_4h7yh")
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.91412, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.870408, 1.50598, 0)
 double_sided = false
 text = "View Orders"
+
+[node name="notif" type="Node3D" parent="."]
+visible = false
+
+[node name="Label3D" type="Label3D" parent="notif"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1272, 1.49014, 0)
+pixel_size = 0.0025
+text = "New Order"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="notif"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 0.104484, 2.28006, -0.175811)
+mesh = ExtResource("4_ichco")

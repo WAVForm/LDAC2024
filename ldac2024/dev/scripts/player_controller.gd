@@ -6,6 +6,8 @@ const SPEED_GAIN = 0.5
 const SPEED_LOSS = 2
 const MAX_SPEED = 16
 const JUMP_POWER = 10
+@export var push = 5
+
 
 var current_speed = 0.0
 @onready var ray = pov.get_node("selection_ray") as RayCast3D
@@ -88,6 +90,7 @@ func move():
 	else: #player slows down
 		velocity.x = move_toward(velocity.x, 0, SPEED_LOSS)
 		velocity.z = move_toward(velocity.z, 0, SPEED_LOSS)
+		
 
 	move_and_slide()
 	
@@ -106,6 +109,8 @@ func place_in_inventory(box):
 		o.scanned = box.scanned
 		box.get_parent().add_child(o)
 		inventory.append(o)
+		WRAPPER.boxes.erase(box)
+		WRAPPER.boxes.append(o)
 		o.visible = false
 		o.process_mode = PROCESS_MODE_DISABLED
 	else:
