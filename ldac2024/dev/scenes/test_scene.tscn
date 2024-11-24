@@ -197,7 +197,7 @@ transform = Transform3D(-2.84124e-08, 0, -0.65, 0, 0.65, 0, 0.65, 0, -2.84124e-0
 transform = Transform3D(-4.15258e-08, 0, -0.95, 0, 0.95, 0, 0.95, 0, -4.15258e-08, -45.1129, 1.72564, 19.6598)
 
 [node name="fire_alarm2" parent="cams" instance=ExtResource("13_htgyg")]
-transform = Transform3D(-4.15258e-08, 0, 0.95, 0, 0.95, 0, -0.95, 0, -4.15258e-08, 152.44, 1.72564, 0.595771)
+transform = Transform3D(-4.15258e-08, 0, 0.95, 0, 0.95, 0, -0.95, 0, -4.15258e-08, 151.519, 1.72564, -9.35596)
 
 [node name="fire_alarm3" parent="cams" instance=ExtResource("13_htgyg")]
 transform = Transform3D(0.95, 0, 0, 0, 0.95, 0, 0, 0, 0.95, 81.0115, 1.72564, 118.549)
