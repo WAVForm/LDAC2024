@@ -1,12 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqryoln0hlt07"]
+[gd_scene load_steps=13 format=3 uid="uid://bqryoln0hlt07"]
 
 [ext_resource type="Script" path="res://dev/scripts/test_scene.gd" id="1_0lfjr"]
 [ext_resource type="PackedScene" uid="uid://c8ss7ie85eom7" path="res://dev/scenes/gameobjects/player.tscn" id="2_o1kdk"]
 [ext_resource type="PackedScene" uid="uid://b5qkk5jvj1oal" path="res://dev/scenes/gameobjects/terminal.tscn" id="3_7tqby"]
-[ext_resource type="PackedScene" uid="uid://x18xtduft8i6" path="res://dev/scenes/gameobjects/pallet.tscn" id="4_1ubun"]
+[ext_resource type="PackedScene" path="res://dev/scenes/gameobjects/pallet.tscn" id="4_1ubun"]
 [ext_resource type="PackedScene" uid="uid://dw4n5e60sue1h" path="res://models/level_blockout.fbx" id="5_kpspt"]
-[ext_resource type="PackedScene" uid="uid://ppyi5lebys11" path="res://dev/scenes/gameobjects/shelf.tscn" id="6_u2lgs"]
-[ext_resource type="ArrayMesh" uid="uid://62hgkadt8ubr" path="res://models/floor.tres" id="7_lah7v"]
+[ext_resource type="PackedScene" path="res://dev/scenes/gameobjects/shelf.tscn" id="6_u2lgs"]
+[ext_resource type="ArrayMesh" uid="uid://yeanayr40o1k" path="res://models/floor.tres" id="7_lah7v"]
+[ext_resource type="PackedScene" uid="uid://byhfl7emxgqf5" path="res://Abigail_modles/ladder.fbx" id="10_tqgjf"]
+[ext_resource type="PackedScene" uid="uid://ue3eegi4kuys" path="res://dev/scenes/models/robot.tscn" id="10_umtfg"]
+[ext_resource type="PackedScene" uid="uid://mnv13k25rjvo" path="res://dev/scenes/models/trucks_+_wall.tscn" id="11_cwllu"]
+[ext_resource type="PackedScene" uid="uid://dgwfjie26rips" path="res://dev/scenes/models/blank_wall.tscn" id="11_xcean"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l3xax"]
 size = Vector3(198.65, 0.001, 281.596)
@@ -145,3 +149,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00689697, -0.00750995, 0.7
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1015, -0.0152471, -22.5515)
 shape = SubResource("BoxShape3D_l3xax")
+
+[node name="ladder" parent="." instance=ExtResource("10_tqgjf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3017, -0.0222573, -66.6551)
+
+[node name="trucks + wall2" parent="." instance=ExtResource("11_cwllu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44.5, 0, 8.343)
+
+[node name="robot" parent="." instance=ExtResource("10_umtfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -8)
+
+[node name="blank_wall" parent="." instance=ExtResource("11_xcean")]
+transform = Transform3D(-2.76116e-07, 0, -1, 0, 1, 0, 6.3168, 0, -4.37114e-08, -45.138, -3.8147e-06, 119.027)
+
+[node name="blank_wall5" parent="." instance=ExtResource("11_xcean")]
+transform = Transform3D(-6.77046e-07, 0, 1, 0, 1, 0, -15.489, 0, -4.37114e-08, 152.514, -2.67029e-05, -163.748)
+
+[node name="blank_wall3" parent="." instance=ExtResource("11_xcean")]
+transform = Transform3D(10.9223, 0, 0, 0, 1, 0, 0, 0, 1, 153.457, 7.62939e-06, 118.584)
+
+[node name="blank_wall4" parent="." instance=ExtResource("11_xcean")]
+transform = Transform3D(-10.9223, 0, -8.74228e-08, 0, 1, 0, 9.54856e-07, 0, -1, -46.4527, 4.57764e-05, -162.906)
+
+[node name="blank_wall2" parent="." instance=ExtResource("11_xcean")]
+transform = Transform3D(-3.14577e-07, 0, -1, 0, 1, 0, 7.19668, 0, -4.37114e-08, -45.138, 0, -31.626)

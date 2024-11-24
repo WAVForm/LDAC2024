@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://mnv13k25rjvo"]
+
+[ext_resource type="PackedScene" uid="uid://cjgbiuintrmfn" path="res://Abigail_modles/trucks + wall.fbx" id="1_sryq3"]
+[ext_resource type="Texture2D" uid="uid://b7tedcuk8a6hs" path="res://textures/additional_textures_gradient.png" id="2_bq146"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjcqk"]
+albedo_texture = ExtResource("2_bq146")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdd51"]
+albedo_texture = ExtResource("2_bq146")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3f5t"]
+albedo_texture = ExtResource("2_bq146")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbhcf"]
+albedo_texture = ExtResource("2_bq146")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wph2r"]
+albedo_texture = ExtResource("2_bq146")
+
+[node name="trucks + wall" instance=ExtResource("1_sryq3")]
+
+[node name="blue truck" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_pjcqk")
+
+[node name="purple truck" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_pdd51")
+
+[node name="pink truck" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_l3f5t")
+
+[node name="Object017" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_nbhcf")
+
+[node name="blank_wall" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_wph2r")
