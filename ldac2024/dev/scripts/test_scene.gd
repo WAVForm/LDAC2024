@@ -14,6 +14,7 @@ func _ready() -> void:
 	)
 	self.add_child(WRAPPER.time)
 	WRAPPER.time.start(300) #start 5 minute timer
+	WRAPPER.timeout.connect()
 
 func _input(event):
 	if event is InputEventKey and event.keycode == KEY_ESCAPE and (input_limit_timer.is_stopped() || input_limit_timer.time_left <= 0):
