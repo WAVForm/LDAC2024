@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://mnv13k25rjvo"]
+
+[ext_resource type="PackedScene" uid="uid://cjgbiuintrmfn" path="res://Abigail_modles/trucks + wall.fbx" id="1_sryq3"]
+[ext_resource type="Texture2D" uid="uid://b7tedcuk8a6hs" path="res://textures/additional_textures_gradient.png" id="2_bq146"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjcqk"]
+albedo_texture = ExtResource("2_bq146")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdd51"]
+albedo_texture = ExtResource("2_bq146")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3f5t"]
+albedo_texture = ExtResource("2_bq146")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbhcf"]
+albedo_texture = ExtResource("2_bq146")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wph2r"]
+albedo_texture = ExtResource("2_bq146")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fe30q"]
+size = Vector3(36.5533, 52.7036, 11.0984)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_87gr6"]
+size = Vector3(4.01231, 0.001, 10.1004)
+
+[node name="trucks + wall" instance=ExtResource("1_sryq3")]
+
+[node name="blue truck" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_pjcqk")
+
+[node name="purple truck" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_pdd51")
+
+[node name="pink truck" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_l3f5t")
+
+[node name="Object017" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_nbhcf")
+
+[node name="blank_wall" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_wph2r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="9"]
+
+[node name="CollisionPolygon3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9904, 26.1431, -5.47561)
+shape = SubResource("BoxShape3D_fe30q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1022, 0.13683, -5.5513)
+shape = SubResource("BoxShape3D_87gr6")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6253, 0.13683, -5.5513)
+shape = SubResource("BoxShape3D_87gr6")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.9741, 0.13683, -5.5513)
+shape = SubResource("BoxShape3D_87gr6")

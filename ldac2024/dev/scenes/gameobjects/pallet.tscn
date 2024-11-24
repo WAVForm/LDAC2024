@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://x18xtduft8i6"]
+
+[ext_resource type="Script" path="res://dev/scripts/pallet.gd" id="1_o7h8t"]
+[ext_resource type="ArrayMesh" path="res://models/pallet.tres" id="2_4qjum"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bcbj1"]
+size = Vector3(7.49159, 22.08, 7.76659)
+
+[node name="pallet" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_o7h8t")
+
+[node name="model" type="MeshInstance3D" parent="."]
+transform = Transform3D(18, 0, 0, 0, -7.86805e-07, 15, 0, -18, -6.55671e-07, 0, -0.3, 0)
+mesh = ExtResource("2_4qjum")
+
+[node name="collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.067, 0, 0, 0, 1, 0.00492096, -0.595395, 0.0258408)
+shape = SubResource("BoxShape3D_bcbj1")
+
+[node name="points" type="Node3D" parent="."]
+transform = Transform3D(0.561654, 0, 0, 0, 1, 0, 0, 0, 0.548873, 0, 0, 0)
+
+[node name="00" type="Node3D" parent="points"]
+transform = Transform3D(0.997564, 0, -0.0697565, 0, 1, 0, 0.0697565, 0, 0.997564, -4.5, 0.3, -4.5)
+
+[node name="01" type="Node3D" parent="points"]
+transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 0, 0.3, -4.5)
+
+[node name="02" type="Node3D" parent="points"]
+transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 4.5, 0.3, -4.5)
+
+[node name="03" type="Node3D" parent="points"]
+transform = Transform3D(0.992546, 0, 0.121869, 0, 1, 0, -0.121869, 0, 0.992546, -4.5, 0.3, 0)
+
+[node name="04" type="Node3D" parent="points"]
+transform = Transform3D(0.999391, 0, -0.0348995, 0, 1, 0, 0.0348995, 0, 0.999391, 0, 0.3, 0)
+
+[node name="05" type="Node3D" parent="points"]
+transform = Transform3D(0.987688, 0, 0.156434, 0, 1, 0, -0.156434, 0, 0.987688, 4.5, 0.3, 0)
+
+[node name="06" type="Node3D" parent="points"]
+transform = Transform3D(0.994522, 0, -0.104528, 0, 1, 0, 0.104528, 0, 0.994522, -4.5, 0.3, 4.5)
+
+[node name="07" type="Node3D" parent="points"]
+transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 0, 0.3, 4.5)
+
+[node name="08" type="Node3D" parent="points"]
+transform = Transform3D(0.999848, 0, -0.0174524, 0, 1, 0, 0.0174524, 0, 0.999848, 4.5, 0.3, 4.5)

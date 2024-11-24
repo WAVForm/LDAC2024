@@ -23,3 +23,8 @@ shape = SubResource("CapsuleShape3D_t6xcu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 
 [node name="camera" type="Camera3D" parent="pov"]
+
+[node name="selection_ray" type="RayCast3D" parent="pov"]
+target_position = Vector3(0, 0, -0.5)
+collide_with_areas = true
+debug_shape_thickness = 5

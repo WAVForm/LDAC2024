@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b85yrivup1c32"]
+
+[ext_resource type="ArrayMesh" uid="uid://blkmje8k71mdg" path="res://models/scanner.tres" id="1_bo14p"]
+
+[node name="scanner" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+
+[node name="model" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-08, 0.5, 2.18557e-08, 0, -2.18557e-08, 0.5, 0.5, 2.18557e-08, 9.55343e-16, 0, -0.2, -0.1)
+layers = 512
+mesh = ExtResource("1_bo14p")

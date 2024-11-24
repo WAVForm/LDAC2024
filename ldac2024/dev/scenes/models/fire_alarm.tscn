@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cywnpxkim8iy1"]
+
+[ext_resource type="PackedScene" uid="uid://bx0001uumvc8r" path="res://models/fire_alarm.fbx" id="1_fc8s2"]
+[ext_resource type="Material" uid="uid://cfa7j711lc6o" path="res://materials/mat2.tres" id="2_vogc3"]
+
+[node name="fire_alarm" instance=ExtResource("1_fc8s2")]
+
+[node name="firealarm" parent="." index="0"]
+material_override = ExtResource("2_vogc3")

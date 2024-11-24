@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://t508gc74a8ts"]
+
+[ext_resource type="Script" path="res://dev/scripts/objects/scannable.gd" id="1_b4jpf"]
+[ext_resource type="ArrayMesh" uid="uid://cvswobte5mval" path="res://models/box_12.tres" id="1_s51jo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_knk7y"]
+size = Vector3(13.1346, 13.6472, 10.042)
+
+[node name="box_12" type="RigidBody3D"]
+script = ExtResource("1_b4jpf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, -0.0182953, 1.24813, 0.00158262)
+shape = SubResource("BoxShape3D_knk7y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0, 0, 0)
+mesh = ExtResource("1_s51jo")
+skeleton = NodePath("")
