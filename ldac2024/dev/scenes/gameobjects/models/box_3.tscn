@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cb6c48x3pogco"]
 
 [ext_resource type="Script" path="res://dev/scripts/objects/scannable.gd" id="1_5jp0v"]
-[ext_resource type="ArrayMesh" uid="uid://cv4pc4qhi6yas" path="res://models/box_3.tres" id="1_pqjkp"]
+[ext_resource type="ArrayMesh" path="res://models/box_3.tres" id="1_pqjkp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fctsa"]
 size = Vector3(15.2481, 15.894, 10.168)
