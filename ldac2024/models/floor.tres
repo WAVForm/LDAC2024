@@ -1,0 +1,35 @@
+[gd_resource type="ArrayMesh" load_steps=3 format=4 uid="uid://62hgkadt8ubr"]
+
+[ext_resource type="Material" uid="uid://bosa06atrhr6k" path="res://materials/mat1.tres" id="1_5vk7j"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qpvn3"]
+_surfaces = [{
+"aabb": AABB(-17.5996, -1.38855e-05, -0.000340094, 17.5996, 28.3785, 0.000340714),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "07 - Default",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("9suMwTYH40H7Flg0zcxMNjYH40FUpns0AAAAAM3MTDWWqSY19suMwcP1aLeXTrK5")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "floor"
+_surfaces = [{
+"aabb": AABB(-17.5996, -1.38855e-05, -0.000340094, 17.5996, 28.3785, 0.000340714),
+"attribute_data": PackedByteArray("zPF1PFCKsz5clhg+UIqzPlqWGD5qFRE/zPF1PGwVET8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("1_5vk7j"),
+"name": "07 - Default",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("9suMwTYH40H7Flg0zcxMNjYH40FUpns0AAAAAM3MTDWWqSY19suMwcP1aLeXTrK5/3//f/7//7//f/9//v//v/9//3/+//+//3//f/7//78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_qpvn3")

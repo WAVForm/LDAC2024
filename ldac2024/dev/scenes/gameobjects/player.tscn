@@ -22,7 +22,7 @@ mesh = SubResource("CapsuleMesh_uxkk7")
 shape = SubResource("CapsuleShape3D_t6xcu")
 
 [node name="pov" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 script = ExtResource("2_brp30")
 
 [node name="selection_ray" type="RayCast3D" parent="pov"]
@@ -36,7 +36,6 @@ cull_mask = 1048063
 [node name="laser" type="SpotLight3D" parent="pov"]
 light_color = Color(1, 0, 0, 1)
 light_energy = 0.1
-spot_range = 1.0
 spot_angle = 30.0
 
 [node name="inventory_drop_position" type="Node3D" parent="pov"]
@@ -57,6 +56,7 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Node3D" type="Node3D" parent="view_container/view"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
 [node name="camera" type="Camera3D" parent="view_container/view/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)

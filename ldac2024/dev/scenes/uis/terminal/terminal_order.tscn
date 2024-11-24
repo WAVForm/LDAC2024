@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://e8dylytovi50"]
 
-[ext_resource type="Script" path="res://dev/scenes/uis/terminal/terminal_order.gd" id="1_0vuiu"]
+[ext_resource type="Script" path="res://dev/terminal_order.gd" id="1_0vuiu"]
 
 [node name="terminal_order" type="Panel"]
 clip_contents = true

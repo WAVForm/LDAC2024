@@ -3,8 +3,8 @@ extends CharacterBody3D
 @onready var pov:Node3D = $pov
 
 const SPEED_GAIN = 0.2
-const SPEED_LOSS = 0.25
-const MAX_SPEED = 2.0
+const SPEED_LOSS = 2
+const MAX_SPEED = 8.0
 const JUMP_POWER = 2.0
 
 var current_speed = 0.0

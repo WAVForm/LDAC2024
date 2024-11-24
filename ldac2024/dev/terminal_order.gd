@@ -12,6 +12,6 @@ func initialize(item):
 	)
 
 func _input(event):
-	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
+	if event is InputEventMouseButton and event.pressed and event.button_index == 1 and WRAPPER.ui_state_list.back() != WRAPPER.UIS.TERMINAL_ITEM:
 		if event.position.x >= self.get_global_transform_with_canvas().origin.x && event.position.x <= (self.get_global_transform_with_canvas().origin + self.size).x && event.position.y >= self.get_global_transform_with_canvas().origin.y && event.position.y <= (self.get_global_transform_with_canvas().origin + self.size).y:
 			clicked.emit()

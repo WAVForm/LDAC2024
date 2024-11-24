@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://dev/scripts/objects/scannable.gd" id="1_8o44d"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ftrag"]
-size = Vector3(0.1, 0.1, 0.1)
+size = Vector3(2, 2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_04x0h"]
-size = Vector3(0.1, 0.1, 0.1)
+size = Vector3(2, 2, 2)
 
 [node name="scannable" type="RigidBody3D"]
 script = ExtResource("1_8o44d")
@@ -15,9 +15,10 @@ script = ExtResource("1_8o44d")
 mesh = SubResource("BoxMesh_ftrag")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000481099, 0, 0)
 shape = SubResource("BoxShape3D_04x0h")
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123319, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.47318, 0)
 text = "Scan then Use"
 font_size = 12
