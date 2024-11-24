@@ -34,6 +34,7 @@ func _input(event):
 		if event.pressed:
 			scan_timer.start(0.5)
 			pov.using = true
+			$AudioStreamPlayer3D.play()
 		else:
 			pov.using = false
 			can_scan = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bqryoln0hlt07"]
+[gd_scene load_steps=31 format=3 uid="uid://bqryoln0hlt07"]
 
 [ext_resource type="Script" path="res://dev/scripts/test_scene.gd" id="1_0lfjr"]
 [ext_resource type="PackedScene" uid="uid://c8ss7ie85eom7" path="res://dev/scenes/gameobjects/player.tscn" id="2_o1kdk"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://dev/scenes/ROBOT_01.gd" id="19_xjqvr"]
 [ext_resource type="Script" path="res://dev/scenes/robot_02.gd" id="20_libsu"]
 [ext_resource type="Script" path="res://dev/scenes/MID ROBOT.gd" id="21_4dhjm"]
+[ext_resource type="AudioStream" uid="uid://vufd2o562375" path="res://sounds/airport lounge fast.mp3" id="24_io4tl"]
 [ext_resource type="PackedScene" uid="uid://cxmdrx3ivou5m" path="res://dev/scenes/models/mid robot.tscn" id="25_pn6l1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l3xax"]
@@ -473,3 +474,8 @@ script = ExtResource("21_4dhjm")
 
 [node name="RigidBody3D" parent="Path3D8/PathFollow3D" instance=ExtResource("25_pn6l1")]
 transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_io4tl")
+volume_db = -10.0
+autoplay = true
