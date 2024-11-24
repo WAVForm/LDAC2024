@@ -6,14 +6,8 @@ const SPEED_GAIN = 0.5
 const SPEED_LOSS = 2
 const MAX_SPEED = 16
 const JUMP_POWER = 10
-@export var push = 5
-
 var ladder_array = []
 
-var direction = Vector3()
-var gravity_vec = Vector3()
-var movement = Vector3()
-var snap
 
 enum State{
 	NORMAL,
