@@ -39,23 +39,38 @@ func _input(event):
 			pov.using = false
 			can_scan = false
 	
-	elif event.is_action_pressed("use"):
+	if event.is_action_pressed("use"):
 		var r = pov.get_node("selection_ray") as RayCast3D #attempt selecting interactable
 		if r.is_colliding() and r.get_collider().has_method("use"):
 			var returned = r.get_collider().use()
 			if returned != null and returned is Scannable:
 				place_in_inventory(returned)
 	
-	elif event.is_action_pressed("remove"):
+	if event.is_action_pressed("remove"):
 		if not inventory.is_empty():
-			take_out_inventory(inventory.back())
+			take_out_inventory(inventory.front())
 			
+	if event.is_action_pressed("mouse_wheel_up"):
+		var f = inventory.pop_front()
+		var b = inventory.pop_back()
+		if b != null:
+			inventory.push_front(b)
+		if f != null:
+			inventory.push_back(f)
+		WRAPPER.update_p_ui.emit(inventory.front())
+		
+	if event.is_action_pressed("mouse_wheel_down"):
+		var f = inventory.pop_front()
+		if f != null:
+			inventory.push_back(f)
+		WRAPPER.update_p_ui.emit(inventory.front())
 
 func _ready():
 	scan_timer = Timer.new()
 	scan_timer.one_shot = true
 	add_child(scan_timer)
 	scan_timer.timeout.connect(func(): can_scan = true)
+	WRAPPER.failed_order.connect(func(s): inventory.erase(s))
 	
 
 func _process(_delta):
@@ -114,40 +129,37 @@ func turn_pov(input_dir:Vector2):
 func place_in_inventory(box):
 	if box.original:
 		box.get_node("MeshInstance3D").set_surface_override_material(0, null)
-		box.item = null
 		var o = box.duplicate()
 		o.original = false
 		o.item = box.item
+		o.time = Timer.new()
+		box.item = null
 		o.scanned = box.scanned
+		o.started = true
 		box.get_parent().add_child(o)
+		o.time.start(box.time.time_left)
 		inventory.append(o)
 		WRAPPER.boxes.erase(box)
 		WRAPPER.boxes.append(o)
 		o.visible = false
-		o.process_mode = PROCESS_MODE_DISABLED
+		o.freeze = true
+		o.collision_layer = 2
+		o.collision_mask = 2
+		WRAPPER.update_p_ui.emit(inventory.front())
 	else:
 		inventory.append(box)
 		box.visible = false
 		box.freeze = true
-		box.process_mode = PROCESS_MODE_DISABLED
+		box.collision_layer = 2
+		box.collision_mask = 2
+		WRAPPER.update_p_ui.emit(inventory.front())
 	
 func take_out_inventory(box):
 	inventory.erase(box)
 	box.global_position = inventory_drop_position.global_position
 	box.visible = true
 	box.freeze = false
+	box.collision_layer = 1
+	box.collision_mask = 1
 	box.process_mode = PROCESS_MODE_INHERIT
-	
-func lattermove():
-	var input_dir := Input.get_vector("move_up", "move_down","move_left", "move_right")
-	
-	if (input_dir.x == 0 && input_dir.y == 0): #user stopped input?
-		current_speed = 0.0
-	else:
-		current_speed = current_speed if current_speed >= MAX_SPEED else current_speed+SPEED_GAIN
-	
-	var direction := (pov.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:#player is moving
-		velocity.y = direction.y * current_speed
-	
-	move()
+	WRAPPER.update_p_ui.emit(inventory.front())
