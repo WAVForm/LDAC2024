@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ppyi5lebys11"]
 
 [ext_resource type="Script" path="res://dev/scenes/gameobjects/shelf.gd" id="1_7ptc0"]
-[ext_resource type="ArrayMesh" uid="uid://cf4tyn4y2d5ke" path="res://models/shelf.tres" id="1_swvti"]
+[ext_resource type="ArrayMesh" uid="uid://b4p7wnlmfubst" path="res://models/shelf.tres" id="1_swvti"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c22q8"]
 size = Vector3(1.55447, 29.389, 6.35162)
