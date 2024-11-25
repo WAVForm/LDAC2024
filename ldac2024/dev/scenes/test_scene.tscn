@@ -386,38 +386,7 @@ pixel_size = 0.05
 text = "Truck 4"
 
 [node name="ceiling_light" parent="." instance=ExtResource("14_m6ov1")]
-transform = Transform3D(1.37733, -1.17325e-10, -5.82077e-11, -1.36993e-11, 1.37733, -1.16415e-10, 0, 0, 1.37733, 53.7426, 43.1463, -38.935)
-
-[node name="ceiling_light2" parent="." instance=ExtResource("14_m6ov1")]
-transform = Transform3D(1.37733, -1.17325e-10, -5.82077e-11, -1.36993e-11, 1.37733, -1.16415e-10, 0, 0, 1.37733, 120.004, 43.1463, -38.935)
-
-[node name="ceiling_light3" parent="." instance=ExtResource("14_m6ov1")]
-transform = Transform3D(1.37733, -1.17325e-10, -5.82077e-11, -1.36993e-11, 1.37733, -1.16415e-10, 0, 0, 1.37733, 55.2695, 43.1463, -93.9784)
-
-[node name="ceiling_light4" parent="." instance=ExtResource("14_m6ov1")]
-transform = Transform3D(1.37733, -1.17325e-10, -5.82077e-11, -1.36993e-11, 1.37733, -1.16415e-10, 0, 0, 1.37733, 55.2695, 43.1463, 21.5395)
-
-[node name="ceiling_light5" parent="." instance=ExtResource("14_m6ov1")]
-transform = Transform3D(1.37733, -1.17325e-10, -5.82077e-11, -1.36993e-11, 1.37733, -1.16415e-10, 0, 0, 1.37733, 55.2695, 43.1463, 75.0663)
-
-[node name="ceiling_light6" parent="." instance=ExtResource("14_m6ov1")]
-transform = Transform3D(1.37733, -1.46429e-10, -5.82077e-11, -1.36993e-11, 1.37733, -2.32831e-10, 0, 0, 1.37733, 118.268, 43.1664, 78.1006)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 9.77737e-09, 1.7538e-08, -1.33582e-11, -0.218808, 0.975768, -5.82077e-11, -0.975769, -0.218807, 118.268, 43.1664, 22.9282)
-light_color = Color(0.881483, 0.916244, 0.920321, 1)
-light_energy = 0.0
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="DirectionalLight3D"]
-transform = Transform3D(0.985301, 0, -0.170829, 0, 1, 0, 0.170829, 0, 0.985301, 0, 0, 0)
-light_energy = 0.275
-
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="DirectionalLight3D"]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 0, 0)
-light_energy = 0.39
-
-[node name="ceiling_light7" parent="." instance=ExtResource("14_m6ov1")]
-transform = Transform3D(1.37733, -1.46429e-10, -5.82077e-11, -1.36993e-11, 1.37733, -2.32831e-10, 0, 0, 1.37733, 118.268, 43.1664, 22.9282)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.236, 33.5356, -24.6381)
 
 [node name="ceiling_sprinkler" parent="." instance=ExtResource("15_6d835")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5588, 38.8151, -57.0093)
