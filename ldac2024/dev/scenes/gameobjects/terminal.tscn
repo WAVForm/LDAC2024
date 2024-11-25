@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://b5qkk5jvj1oal"]
 
 [ext_resource type="Script" path="res://dev/scripts/terminal.gd" id="1_mrvh0"]
-[ext_resource type="ArrayMesh" uid="uid://iefmph5lnmqp" path="res://models/desk.tres" id="2_m3p1p"]
-[ext_resource type="ArrayMesh" uid="uid://d2thjf05h05wb" path="res://models/computer.tres" id="3_4h7yh"]
-[ext_resource type="ArrayMesh" uid="uid://ehfecvmuk0cq" path="res://models/exclamation_point.tres" id="4_ichco"]
+[ext_resource type="ArrayMesh" uid="uid://byq13t5jea4hc" path="res://models/desk.tres" id="2_m3p1p"]
+[ext_resource type="ArrayMesh" uid="uid://bpcy7kk25rtx0" path="res://models/computer.tres" id="3_4h7yh"]
+[ext_resource type="ArrayMesh" uid="uid://ehmhmf2r68by" path="res://models/exclamation_point.tres" id="4_ichco"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0sok4"]
 size = Vector3(1.40206, 0.701375, 1.14616)
