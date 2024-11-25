@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bqryoln0hlt07"]
+[gd_scene load_steps=22 format=3 uid="uid://bqryoln0hlt07"]
 
 [ext_resource type="Script" path="res://dev/scripts/test_scene.gd" id="1_0lfjr"]
 [ext_resource type="PackedScene" uid="uid://c8ss7ie85eom7" path="res://dev/scenes/gameobjects/player.tscn" id="2_o1kdk"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://x18xtduft8i6" path="res://dev/scenes/gameobjects/pallet.tscn" id="4_1ubun"]
 [ext_resource type="PackedScene" uid="uid://dw4n5e60sue1h" path="res://models/level_blockout.fbx" id="5_kpspt"]
 [ext_resource type="PackedScene" uid="uid://ppyi5lebys11" path="res://dev/scenes/gameobjects/shelf.tscn" id="6_u2lgs"]
-[ext_resource type="ArrayMesh" uid="uid://62hgkadt8ubr" path="res://models/floor.tres" id="7_lah7v"]
+[ext_resource type="ArrayMesh" uid="uid://bx083ai6wm7r4" path="res://models/floor.tres" id="7_lah7v"]
 [ext_resource type="PackedScene" uid="uid://ue3eegi4kuys" path="res://dev/scenes/models/robot.tscn" id="10_umtfg"]
 [ext_resource type="PackedScene" uid="uid://mnv13k25rjvo" path="res://dev/scenes/models/trucks_+_wall.tscn" id="11_cwllu"]
 [ext_resource type="PackedScene" uid="uid://dgwfjie26rips" path="res://dev/scenes/models/blank_wall.tscn" id="11_xcean"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bhlqkab47sraj" path="res://dev/scenes/models/ceiling_sprinkler.tscn" id="15_6d835"]
 [ext_resource type="PackedScene" uid="uid://b0xtbhxnhr7ig" path="res://dev/scenes/models/ceilling_fan.tscn" id="16_ow841"]
 [ext_resource type="PackedScene" uid="uid://ckbvyuk0fcqu2" path="res://dev/scenes/models/ladder.tscn" id="17_s1k0x"]
+[ext_resource type="PackedScene" uid="uid://cw4qgpufv55aq" path="res://dev/scenes/models/box_pile.tscn" id="24_xlckj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l3xax"]
 size = Vector3(198.65, 0.001, 281.596)
@@ -160,6 +161,10 @@ transform = Transform3D(1, 0, -6.99382e-07, 0, 1, 0, 6.99382e-07, 0, 1, 131.306,
 [node name="42" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -6.99382e-07, 0, 1, 0, 6.99382e-07, 0, 1, 79.0052, -7.62939e-06, 6.00604)
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="shelves/42"]
+transform = Transform3D(1, 0, 0, 0, 0.939298, 0.343102, 0, -0.343102, 0.939298, 0, 92, 0)
+light_energy = 0.39
+
 [node name="floor" type="Node3D" parent="."]
 
 [node name="floor_model" type="MeshInstance3D" parent="floor"]
@@ -300,7 +305,38 @@ pixel_size = 0.05
 text = "Truck 4"
 
 [node name="ceiling_light" parent="." instance=ExtResource("14_m6ov1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.236, 33.5356, -24.6381)
+transform = Transform3D(1.37733, -1.17325e-10, -5.82077e-11, -1.36993e-11, 1.37733, -1.16415e-10, 0, 0, 1.37733, 53.7426, 43.1463, -38.935)
+
+[node name="ceiling_light2" parent="." instance=ExtResource("14_m6ov1")]
+transform = Transform3D(1.37733, -1.17325e-10, -5.82077e-11, -1.36993e-11, 1.37733, -1.16415e-10, 0, 0, 1.37733, 120.004, 43.1463, -38.935)
+
+[node name="ceiling_light3" parent="." instance=ExtResource("14_m6ov1")]
+transform = Transform3D(1.37733, -1.17325e-10, -5.82077e-11, -1.36993e-11, 1.37733, -1.16415e-10, 0, 0, 1.37733, 55.2695, 43.1463, -93.9784)
+
+[node name="ceiling_light4" parent="." instance=ExtResource("14_m6ov1")]
+transform = Transform3D(1.37733, -1.17325e-10, -5.82077e-11, -1.36993e-11, 1.37733, -1.16415e-10, 0, 0, 1.37733, 55.2695, 43.1463, 21.5395)
+
+[node name="ceiling_light5" parent="." instance=ExtResource("14_m6ov1")]
+transform = Transform3D(1.37733, -1.17325e-10, -5.82077e-11, -1.36993e-11, 1.37733, -1.16415e-10, 0, 0, 1.37733, 55.2695, 43.1463, 75.0663)
+
+[node name="ceiling_light6" parent="." instance=ExtResource("14_m6ov1")]
+transform = Transform3D(1.37733, -1.46429e-10, -5.82077e-11, -1.36993e-11, 1.37733, -2.32831e-10, 0, 0, 1.37733, 118.268, 43.1664, 78.1006)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 9.77737e-09, 1.7538e-08, -1.33582e-11, -0.218808, 0.975768, -5.82077e-11, -0.975769, -0.218807, 118.268, 43.1664, 22.9282)
+light_color = Color(0.881483, 0.916244, 0.920321, 1)
+light_energy = 0.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="DirectionalLight3D"]
+transform = Transform3D(0.985301, 0, -0.170829, 0, 1, 0, 0.170829, 0, 0.985301, 0, 0, 0)
+light_energy = 0.275
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="DirectionalLight3D"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 0, 0)
+light_energy = 0.39
+
+[node name="ceiling_light7" parent="." instance=ExtResource("14_m6ov1")]
+transform = Transform3D(1.37733, -1.46429e-10, -5.82077e-11, -1.36993e-11, 1.37733, -2.32831e-10, 0, 0, 1.37733, 118.268, 43.1664, 22.9282)
 
 [node name="ceiling_sprinkler" parent="." instance=ExtResource("15_6d835")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5588, 38.8151, -57.0093)
@@ -310,9 +346,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5306, 61.2083, 45.2783)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_xyqy2")
-
-[node name="ladder" parent="." instance=ExtResource("17_s1k0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00686, 0, 13.8608)
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0.00081661, 0.000261258, -0.000271851, 0.0130198, 0.999915, 0.00081313, -0.999915, 0.01302, 53.4738, 39.0859, 77.3796)
@@ -449,3 +482,27 @@ shadow_blur = 2.313
 spot_range = 49.268
 spot_attenuation = 0.14
 spot_angle_attenuation = 0.63728
+
+[node name="box_pile" parent="." instance=ExtResource("24_xlckj")]
+transform = Transform3D(-0.900419, -0.000275481, -0.435024, 0.000140749, 0.999999, -0.000924552, 0.435024, -0.000893699, -0.900419, -33.2078, 0.0409054, 105.468)
+
+[node name="box_pile2" parent="." instance=ExtResource("24_xlckj")]
+transform = Transform3D(-0.999263, -0.000275481, -0.0383843, -0.000240957, 0.999999, -0.000903623, 0.0383845, -0.000893699, -0.999263, -34.9143, -0.0209606, 84.9497)
+
+[node name="box_pile3" parent="." instance=ExtResource("24_xlckj")]
+transform = Transform3D(-0.659343, -0.000275481, 0.751842, -0.00085354, 0.999999, -0.000382144, -0.751841, -0.000893699, -0.659344, -34.9408, -0.0370374, -151.47)
+
+[node name="ladder" parent="." instance=ExtResource("17_s1k0x")]
+transform = Transform3D(-1.13156e-07, -0.00451983, 2.58967, 0, 2.58967, 0.00451984, -2.58967, 2.32831e-10, -1.13039e-07, 32.3961, -0.0286129, -114.613)
+
+[node name="ladder2" parent="." instance=ExtResource("17_s1k0x")]
+transform = Transform3D(3.08816e-08, 0.00451983, -2.58967, 0, 2.58967, 0.00451983, 2.58967, -5.38984e-11, 3.08815e-08, 34.8575, 5.75356, -64.0726)
+
+[node name="ladder3" parent="." instance=ExtResource("17_s1k0x")]
+transform = Transform3D(-1.13156e-07, -0.00451983, 2.58967, 0, 2.58967, 0.00451984, -2.58967, 2.32831e-10, -1.13039e-07, 28.7553, 5.76421, 4.50961)
+
+[node name="ladder4" parent="." instance=ExtResource("17_s1k0x")]
+transform = Transform3D(-1.13156e-07, -0.00451983, 2.58967, 0, 2.58967, 0.00451984, -2.58967, 2.32831e-10, -1.13039e-07, 132.437, 5.94516, 4.50961)
+
+[node name="ladder5" parent="." instance=ExtResource("17_s1k0x")]
+transform = Transform3D(3.08816e-08, 0.00451983, -2.58967, 0, 2.58967, 0.00451983, 2.58967, -5.38984e-11, 3.08815e-08, 138.539, 5.93451, -18.4505)
