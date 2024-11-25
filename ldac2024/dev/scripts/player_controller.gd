@@ -62,6 +62,10 @@ func _physics_process(delta: float) -> void:
 	if WRAPPER.is_ui_open() == true:
 		return
 		
+	if current_state == State.LADDER:
+		lattermove()
+		return
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
