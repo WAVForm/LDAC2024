@@ -18,9 +18,8 @@ var credit_scene = load("res://dev/scenes/uis/credit.tscn")
 var end_scene = load("res://dev/scenes/uis/end.tscn")
 
 func change_to_scene(scene_id:SCENES):
-	if current_scene != null:
-		current_scene.queue_free()
-	reset_ui()
+	for child in self.get_children():
+		child.queue_free()
 	match scene_id:
 		SCENES.DEV:
 			time = Timer.new()
@@ -54,11 +53,6 @@ var pause_ui = load("res://dev/scenes/uis/pause_ui.tscn")
 var terminal_ui = load("res://dev/scenes/uis/terminal_ui.tscn")
 var terminal_item_ui = load("res://dev/scenes/uis/terminal/terminal_item_ui.tscn")
 var player_ui = load("res://dev/scenes/uis/player_ui.tscn")
-
-func reset_ui():
-	while not ui_node_list.is_empty():
-		prev_sub_ui()
-	purge_nec_ui()
 		
 
 func switch_current_ui(ui_id:UIS):
@@ -92,11 +86,6 @@ func prev_sub_ui():
 		ui_node_list.back().queue_free() #free last ui
 		ui_node_list.pop_back() #remove last ui
 		ui_state_list.pop_back() #remote last ui state
-		
-func purge_nec_ui():
-	while not necessary_uis.is_empty():
-		necessary_uis.back().queue_free()
-		necessary_uis.pop_back()
 
 func is_ui_open():
 	if not ui_node_list.is_empty():
@@ -116,20 +105,20 @@ func toggle_mouse_mode(prev):
 #Orders
 var boxes:Array[Scannable]
 signal new_order_in(s:Scannable)
+signal failed_order(s:Scannable)
 
 func order_done(box:Scannable):
 	boxes.erase(box)
-	time.wait_time += 10
-	time.start(time.wait_time)
+	time.start(time.time_left + 10)
 	
 func order_fail(box:Scannable):
 	boxes.erase(box)
-	print(time.wait_time)
-	if time.wait_time - 30 <= 0:
+	print(time.time_left)
+	if time.time_left - 30 <= 0:
 		time.wait_time = 0.01
 	else:
 		time.wait_time -= 30
-	time.start(time.wait_time)
+	time.start(time.time_left)
 	if box.original:
 		box.item = null
 		box.scanned = false
@@ -137,6 +126,7 @@ func order_fail(box:Scannable):
 		box.outline(false)
 		box.time = Timer.new()
 	else:
-		box.queue_free()
+		failed_order.emit()
 
 var time:Timer
+signal update_p_ui(box: Scannable)
