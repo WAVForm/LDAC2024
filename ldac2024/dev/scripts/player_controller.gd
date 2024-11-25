@@ -32,38 +32,23 @@ func _input(event):
 			pov.using = false
 			can_scan = false
 	
-	if event.is_action_pressed("use"):
+	elif event.is_action_pressed("use"):
 		var r = pov.get_node("selection_ray") as RayCast3D #attempt selecting interactable
 		if r.is_colliding() and r.get_collider().has_method("use"):
 			var returned = r.get_collider().use()
 			if returned != null and returned is Scannable:
 				place_in_inventory(returned)
 	
-	if event.is_action_pressed("remove"):
+	elif event.is_action_pressed("remove"):
 		if not inventory.is_empty():
-			take_out_inventory(inventory.front())
+			take_out_inventory(inventory.back())
 			
-	if event.is_action_pressed("mouse_wheel_up"):
-		var f = inventory.pop_front()
-		var b = inventory.pop_back()
-		if b != null:
-			inventory.push_front(b)
-		if f != null:
-			inventory.push_back(f)
-		WRAPPER.update_p_ui.emit(inventory.front())
-		
-	if event.is_action_pressed("mouse_wheel_down"):
-		var f = inventory.pop_front()
-		if f != null:
-			inventory.push_back(f)
-		WRAPPER.update_p_ui.emit(inventory.front())
 
 func _ready():
 	scan_timer = Timer.new()
 	scan_timer.one_shot = true
 	add_child(scan_timer)
 	scan_timer.timeout.connect(func(): can_scan = true)
-	WRAPPER.failed_order.connect(func(s): inventory.erase(s))
 	
 
 func _process(_delta):
@@ -75,6 +60,10 @@ func _process(_delta):
 
 func _physics_process(delta: float) -> void:
 	if WRAPPER.is_ui_open() == true:
+		return
+		
+	if current_state == State.LADDER:
+		lattermove()
 		return
 		
 	# Add the gravity.
@@ -118,37 +107,26 @@ func turn_pov(input_dir:Vector2):
 func place_in_inventory(box):
 	if box.original:
 		box.get_node("MeshInstance3D").set_surface_override_material(0, null)
+		box.item = null
 		var o = box.duplicate()
 		o.original = false
 		o.item = box.item
-		o.time = Timer.new()
-		box.item = null
 		o.scanned = box.scanned
-		o.started = true
 		box.get_parent().add_child(o)
-		o.time.start(box.time.time_left)
 		inventory.append(o)
 		WRAPPER.boxes.erase(box)
 		WRAPPER.boxes.append(o)
 		o.visible = false
-		o.freeze = true
-		o.collision_layer = 2
-		o.collision_mask = 2
-		WRAPPER.update_p_ui.emit(inventory.front())
+		o.process_mode = PROCESS_MODE_DISABLED
 	else:
 		inventory.append(box)
 		box.visible = false
 		box.freeze = true
-		box.collision_layer = 2
-		box.collision_mask = 2
-		WRAPPER.update_p_ui.emit(inventory.front())
+		box.process_mode = PROCESS_MODE_DISABLED
 	
 func take_out_inventory(box):
 	inventory.erase(box)
 	box.global_position = inventory_drop_position.global_position
 	box.visible = true
 	box.freeze = false
-	box.collision_layer = 1
-	box.collision_mask = 1
 	box.process_mode = PROCESS_MODE_INHERIT
-	WRAPPER.update_p_ui.emit(inventory.front())

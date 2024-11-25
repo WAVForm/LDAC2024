@@ -6,7 +6,7 @@ var items:Array
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.body_entered.connect(func(body):
-		if body is Scannable and body.item != null and body.item.truck == truck and body.get_parent().get_parent().get_parent() != self and items.size() < 49:
+		if body is Scannable and body.item.truck == truck and body.get_parent().get_parent().get_parent() != self and items.size() < 49:
 			place_on(body as Scannable)
 	)
 	pass # Replace with function body.

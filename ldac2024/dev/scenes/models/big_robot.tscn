@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmd630ish8bnc"]
+
+[ext_resource type="ArrayMesh" uid="uid://ch0gs3ob2kcjb" path="res://models/MID robot_01.tres" id="1_migsk"]
+[ext_resource type="Material" uid="uid://cfa7j711lc6o" path="res://materials/mat2.tres" id="2_t3jyy"]
+[ext_resource type="Material" uid="uid://bosa06atrhr6k" path="res://materials/mat1.tres" id="3_a33de"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qusss"]
+size = Vector3(0.814544, 0.884065, 0.613611)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(8.10982, 0, 0, 0, 8.10982, -4.40821e-12, 0, 4.40821e-12, 8.10982, -0.227481, 3.42768, 0.000158757)
+shape = SubResource("BoxShape3D_qusss")
+
+[node name="BigRobot" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.81173, 0, 0, 0, -3.88094e-07, 9.19474, 0, -8.87856, -4.01915e-07, 0, 0, 0)
+mesh = ExtResource("1_migsk")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = ExtResource("2_t3jyy")
+surface_material_override/1 = ExtResource("3_a33de")

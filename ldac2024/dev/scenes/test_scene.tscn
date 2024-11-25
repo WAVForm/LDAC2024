@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bqryoln0hlt07"]
+[gd_scene load_steps=35 format=3 uid="uid://bqryoln0hlt07"]
 
 [ext_resource type="Script" path="res://dev/scripts/test_scene.gd" id="1_0lfjr"]
 [ext_resource type="PackedScene" uid="uid://c8ss7ie85eom7" path="res://dev/scenes/gameobjects/player.tscn" id="2_o1kdk"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://x18xtduft8i6" path="res://dev/scenes/gameobjects/pallet.tscn" id="4_1ubun"]
 [ext_resource type="PackedScene" uid="uid://dw4n5e60sue1h" path="res://models/level_blockout.fbx" id="5_kpspt"]
 [ext_resource type="PackedScene" uid="uid://ppyi5lebys11" path="res://dev/scenes/gameobjects/shelf.tscn" id="6_u2lgs"]
-[ext_resource type="ArrayMesh" uid="uid://62hgkadt8ubr" path="res://models/floor.tres" id="7_lah7v"]
+[ext_resource type="PackedScene" uid="uid://c1usvi7xciyd4" path="res://models/big_floor.fbx" id="7_i6wki"]
+[ext_resource type="ArrayMesh" uid="uid://bx083ai6wm7r4" path="res://models/floor.tres" id="7_lah7v"]
 [ext_resource type="PackedScene" uid="uid://ue3eegi4kuys" path="res://dev/scenes/models/robot.tscn" id="10_umtfg"]
 [ext_resource type="PackedScene" uid="uid://mnv13k25rjvo" path="res://dev/scenes/models/trucks_+_wall.tscn" id="11_cwllu"]
 [ext_resource type="PackedScene" uid="uid://dgwfjie26rips" path="res://dev/scenes/models/blank_wall.tscn" id="11_xcean"]
@@ -17,9 +18,22 @@
 [ext_resource type="PackedScene" path="res://dev/scenes/models/ceiling_sprinkler.tscn" id="15_6d835"]
 [ext_resource type="PackedScene" path="res://dev/scenes/models/ceilling_fan.tscn" id="16_ow841"]
 [ext_resource type="PackedScene" path="res://dev/scenes/models/ladder.tscn" id="17_s1k0x"]
+[ext_resource type="Script" path="res://dev/scenes/robot.gd" id="18_f5o7c"]
+[ext_resource type="PackedScene" uid="uid://bmd630ish8bnc" path="res://dev/scenes/models/big_robot.tscn" id="19_1oam2"]
+[ext_resource type="Script" path="res://dev/scenes/ROBOT_01.gd" id="19_xjqvr"]
+[ext_resource type="Script" path="res://dev/scenes/robot_02.gd" id="20_libsu"]
+[ext_resource type="Script" path="res://dev/scenes/MID ROBOT.gd" id="21_4dhjm"]
+[ext_resource type="PackedScene" uid="uid://cw4qgpufv55aq" path="res://dev/scenes/models/box_pile.tscn" id="24_xlckj"]
+[ext_resource type="PackedScene" uid="uid://cxmdrx3ivou5m" path="res://dev/scenes/models/mid robot.tscn" id="25_pn6l1"]
+[ext_resource type="ArrayMesh" uid="uid://c22ky6ox8mjxw" path="res://models/ceiling_light.tres" id="26_hwch7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2n0it"]
+resource_local_to_scene = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l3xax"]
 size = Vector3(198.65, 0.001, 281.596)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_4ooju"]
 
 [sub_resource type="Environment" id="Environment_ejvy7"]
 ambient_light_source = 2
@@ -30,6 +44,34 @@ glow_bloom = 1.0
 adjustment_enabled = true
 adjustment_saturation = 0.5
 
+[sub_resource type="Curve3D" id="Curve3D_ya1kt"]
+_data = {
+"points": PackedVector3Array(-2.76941, 0, 3.76606, 2.76941, 0, -3.76606, 23.124, 0, 96.0484, 8.83198, 0, 11.225, -8.83198, 0, -11.225, 17.7248, 0, -121.72, 8.05541, 0, -10.5514, -8.05541, 0, 10.5514, -17.3873, 0, -121.452, -7.61531, 0, -6.82779, 7.61531, 0, 6.82779, -15.8135, 0, -22.9081, -7.91034, 0, -6.36407, 7.91034, 0, 6.36407, 16.3003, 0, -22.5602, 3.30976, 0, -5.85859, -3.30976, 0, 5.85859, 3.92338, 0, 53.0473, -7.96889, 0, 4.91445, 7.96889, 0, -4.91445, 23.1776, 0, 95.9171),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="Curve3D" id="Curve3D_5pe57"]
+_data = {
+"points": PackedVector3Array(1.01624, 0, -7.35605, -1.01624, 0, 7.35605, 134.933, 0, -5.57143, 0, 0, 0, 0, 0, 0, 83.3619, -0.00203857, 2.49498, -0.0540924, 7.57584e-06, 10.476, 0.0540924, -7.57584e-06, -10.476, 34.5784, -0.00377063, -5.92197, 0, 0, 0, 0, 0, 0, 81.7364, -0.00215299, -15.9156, 0.931946, 0, -9.3289, -0.931946, 0, 9.3289, 134.933, 0, -5.57143),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_thxd6"]
+_data = {
+"points": PackedVector3Array(0.174115, 0, 0.638425, -0.174115, 0, -0.638425, -3.52576, 0, -8.63258, -3.79543, 0, 0.12113, 3.79543, 0, -0.12113, 0.132177, 0, -12.2594, 0.048115, 0, -1.10723, -0.048115, 0, 1.10723, 3.87733, 0, -7.55467, 2.9693, 0, 0.164962, -2.9693, 0, -0.164962, -0.00613129, 0, -4.52412, 0.389282, 0, 1.20884, -0.389282, 0, -1.20884, -3.51669, 0, -8.63787),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_y45xe"]
+_data = {
+"points": PackedVector3Array(0, 0, -4.61346, 0, 0, 4.61346, 128.019, 0, -40.391, -0.602272, 0, 6.84324, 0.602272, 0, -6.84324, 38.4934, 0, -41.0144, 0.0428314, 0, -5.8514, -0.0428314, 0, 5.8514, 128.019, 0, -40.391),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
 [node name="devtest" type="Node3D"]
 script = ExtResource("1_0lfjr")
 
@@ -39,7 +81,12 @@ visible = false
 
 [node name="sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.999998, -0.00174533, 0, 0.000872664, 0.499999, 0.866025, -0.0015115, -0.866024, 0.5, 0, 74.2945, 81.9548)
+visible = false
+light_energy = 0.238
+light_indirect_energy = 2.524
 shadow_enabled = true
+shadow_opacity = 0.2
+shadow_blur = 10.0
 
 [node name="player" parent="." instance=ExtResource("2_o1kdk")]
 transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, -8.87671, 2.07627, -1.63061)
@@ -164,17 +211,52 @@ transform = Transform3D(1, 0, -6.99382e-07, 0, 1, 0, 6.99382e-07, 0, 1, 131.306,
 [node name="42" parent="shelves" instance=ExtResource("6_u2lgs")]
 transform = Transform3D(1, 0, -6.99382e-07, 0, 1, 0, 6.99382e-07, 0, 1, 79.0052, -7.62939e-06, 6.00604)
 
+[node name="big_floor" parent="." instance=ExtResource("7_i6wki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.2996, -0.0222535, -16.8967)
+visible = false
+
+[node name="floor_model" type="MeshInstance3D" parent="big_floor"]
+transform = Transform3D(-6.99382e-07, 7, 4.37114e-08, 0, -3.0598e-07, 1, 16, 3.0598e-07, 1.91069e-15, -45.23, 0, 118.965)
+mesh = ExtResource("7_lah7v")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_2n0it")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="big_floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00689697, -0.00750995, 0.718597)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="big_floor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1015, -0.0152471, -22.5515)
+shape = SubResource("BoxShape3D_l3xax")
+
 [node name="floor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.223738, -1.52588e-05, -0.112751)
 
 [node name="floor_model" type="MeshInstance3D" parent="floor"]
 transform = Transform3D(-6.99382e-07, 7, 4.37114e-08, 0, -3.0598e-07, 1, 16, 3.0598e-07, 1.91069e-15, -45.23, 0, 118.965)
 mesh = ExtResource("7_lah7v")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ORMMaterial3D_4ooju")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00689697, -0.00750995, 0.718597)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1015, -0.0152471, -22.5515)
+shape = SubResource("BoxShape3D_l3xax")
+
+[node name="floor2" type="Node3D" parent="."]
+transform = Transform3D(1.18817, 0, 0, 0, -1.18817, 1.03873e-07, 0, -1.03873e-07, -1.18817, -0.299332, 103.527, -45.0978)
+
+[node name="floor_model" type="MeshInstance3D" parent="floor2"]
+transform = Transform3D(-6.99382e-07, 7, 4.37114e-08, 0, -3.0598e-07, 1, 16, 3.0598e-07, 1.91069e-15, -45.23, 0, 118.965)
+mesh = ExtResource("7_lah7v")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ORMMaterial3D_4ooju")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00689697, -0.00750995, 0.718597)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1015, -0.0152471, -22.5515)
 shape = SubResource("BoxShape3D_l3xax")
 
@@ -316,4 +398,163 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5306, 61.2083, 45.2783)
 environment = SubResource("Environment_ejvy7")
 
 [node name="ladder" parent="." instance=ExtResource("17_s1k0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00686, 0, 13.8608)
+transform = Transform3D(-0.234685, 0, -2.36419, 0, 2.37581, 0, 2.36419, 0, -0.234685, 36.037, 0, 18.3226)
+
+[node name="ladder2" parent="." instance=ExtResource("17_s1k0x")]
+transform = Transform3D(0.220321, 0, 2.36557, 0, 2.37581, 0, -2.36557, 0, 0.220321, 33.7646, 0, -60.5079)
+
+[node name="ladder4" parent="." instance=ExtResource("17_s1k0x")]
+transform = Transform3D(0.0104075, 0, 2.37579, 0, 2.37581, 0, -2.37579, 0, 0.0104075, 132.292, 0, -112.783)
+
+[node name="ladder3" parent="." instance=ExtResource("17_s1k0x")]
+transform = Transform3D(0.220321, 0, 2.36557, 0, 2.37581, 0, -2.36557, 0, 0.220321, 33.1531, 0, 85.5122)
+
+[node name="robots" type="Node3D" parent="."]
+
+[node name="out front robot" type="Path3D" parent="robots"]
+transform = Transform3D(1.04514, 0, 0, 0, 1.00158, 0, 0, 0, 1.03728, -3.46461, 0, -0.972072)
+curve = SubResource("Curve3D_ya1kt")
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="robots/out front robot"]
+transform = Transform3D(0.805604, 0, -0.592409, 0, 1, 0, 0.592409, 0, 0.805604, 23.124, 0, 96.0484)
+script = ExtResource("19_xjqvr")
+
+[node name="BigRobot" parent="robots/out front robot/PathFollow3D2" instance=ExtResource("19_1oam2")]
+
+[node name="main ally robot" type="Path3D" parent="robots"]
+transform = Transform3D(1.04514, 0, 0, 0, 1.00158, 0, 0, 0, 1.03728, -3.46461, 0, -0.972072)
+curve = SubResource("Curve3D_5pe57")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="robots/main ally robot"]
+transform = Transform3D(-0.990579, 0, 0.136848, 0, 1, 0, -0.136848, 0, -0.990579, 134.933, 0, -5.57143)
+script = ExtResource("20_libsu")
+
+[node name="BigRobot2" parent="robots/main ally robot/PathFollow3D" instance=ExtResource("19_1oam2")]
+transform = Transform3D(-0.993865, 0, -1.5007e-07, 0, 0.993892, 0, 1.50069e-07, 0, -0.993865, 0, 0, 0)
+
+[node name="tiney robot by computer" type="Path3D" parent="robots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0193443, 0, 0)
+curve = SubResource("Curve3D_thxd6")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="robots/tiney robot by computer"]
+transform = Transform3D(0.971036, 0, 0.2388, 0, 1, 0, -0.2388, 0, 0.971036, -3.34791, 0, -8.00715)
+progress = 23.7018
+script = ExtResource("18_f5o7c")
+
+[node name="robot2" parent="robots/tiney robot by computer/PathFollow3D" instance=ExtResource("10_umtfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121692, -0.00777389, -0.3074)
+
+[node name="Path3D" type="Path3D" parent="robots"]
+curve = SubResource("Curve3D_y45xe")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="robots/Path3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 128.019, 0, -40.391)
+script = ExtResource("21_4dhjm")
+
+[node name="RigidBody3D" parent="robots/Path3D/PathFollow3D" instance=ExtResource("25_pn6l1")]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
+
+[node name="Path3D2" type="Path3D" parent="robots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -26.9095)
+curve = SubResource("Curve3D_y45xe")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="robots/Path3D2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 128.019, 0, -40.391)
+script = ExtResource("21_4dhjm")
+
+[node name="RigidBody3D" parent="robots/Path3D2/PathFollow3D" instance=ExtResource("25_pn6l1")]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
+
+[node name="Path3D3" type="Path3D" parent="robots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -54.0088)
+curve = SubResource("Curve3D_y45xe")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="robots/Path3D3"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 128.019, 0, -40.391)
+script = ExtResource("21_4dhjm")
+
+[node name="RigidBody3D" parent="robots/Path3D3/PathFollow3D" instance=ExtResource("25_pn6l1")]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
+
+[node name="Path3D4" type="Path3D" parent="robots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -80.079)
+curve = SubResource("Curve3D_y45xe")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="robots/Path3D4"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 128.019, 0, -40.391)
+script = ExtResource("21_4dhjm")
+
+[node name="RigidBody3D" parent="robots/Path3D4/PathFollow3D" instance=ExtResource("25_pn6l1")]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
+
+[node name="Path3D5" type="Path3D" parent="robots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 146.54)
+curve = SubResource("Curve3D_y45xe")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="robots/Path3D5"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 128.019, 0, -40.391)
+script = ExtResource("21_4dhjm")
+
+[node name="RigidBody3D" parent="robots/Path3D5/PathFollow3D" instance=ExtResource("25_pn6l1")]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
+
+[node name="Path3D6" type="Path3D" parent="robots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 119.631)
+curve = SubResource("Curve3D_y45xe")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="robots/Path3D6"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 128.019, 0, -40.391)
+script = ExtResource("21_4dhjm")
+
+[node name="RigidBody3D" parent="robots/Path3D6/PathFollow3D" instance=ExtResource("25_pn6l1")]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
+
+[node name="Path3D7" type="Path3D" parent="robots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 92.5312)
+curve = SubResource("Curve3D_y45xe")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="robots/Path3D7"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 128.019, 0, -40.391)
+script = ExtResource("21_4dhjm")
+
+[node name="RigidBody3D" parent="robots/Path3D7/PathFollow3D" instance=ExtResource("25_pn6l1")]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
+
+[node name="Path3D8" type="Path3D" parent="robots"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 66.461)
+curve = SubResource("Curve3D_y45xe")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="robots/Path3D8"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 128.019, 0, -40.391)
+script = ExtResource("21_4dhjm")
+
+[node name="RigidBody3D" parent="robots/Path3D8/PathFollow3D" instance=ExtResource("25_pn6l1")]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
+
+[node name="box_pile" parent="." instance=ExtResource("24_xlckj")]
+transform = Transform3D(-0.763357, 0, 1.60445, 0, 1.77678, 0, -1.60445, 0, -0.763357, -26.9802, -0.0222573, -145.583)
+
+[node name="box_pile2" parent="." instance=ExtResource("24_xlckj")]
+transform = Transform3D(-1.21303, 0, -1.29827, 0, 1.77678, 0, 1.29827, 0, -1.21303, -31.5665, -0.0222573, 98.9556)
+
+[node name="box_pile3" parent="." instance=ExtResource("24_xlckj")]
+transform = Transform3D(-1.70548, 0, -0.498297, 0, 1.77678, 0, 0.498297, 0, -1.70548, -33.1227, -0.0222573, 59.8856)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999847, 0.00894608, -0.0150497, 0.0155867, -0.0633459, 0.99787, 0.00797369, -0.997952, -0.0634756, -0.756039, 43.5257, 16.049)
+light_color = Color(0.743331, 0.815249, 0.843603, 1)
+light_energy = 0.55
+light_indirect_energy = 1.035
+light_volumetric_fog_energy = 0.815
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999847, -0.00909875, 0.0149579, 0.0155867, 0.0734961, -0.997174, 0.00797369, 0.997254, 0.0736267, -0.451054, 41.0622, -17.3783)
+light_color = Color(0.743331, 0.815249, 0.843603, 1)
+light_energy = 3.445
+light_indirect_energy = 1.035
+light_volumetric_fog_energy = 0.815
+light_negative = true
+
+[node name="CeilingLight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.97445, 71.6876, 40.6957)
+mesh = ExtResource("26_hwch7")
