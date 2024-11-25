@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bqryoln0hlt07"]
+[gd_scene load_steps=33 format=3 uid="uid://bqryoln0hlt07"]
 
 [ext_resource type="Script" path="res://dev/scripts/test_scene.gd" id="1_0lfjr"]
 [ext_resource type="PackedScene" uid="uid://c8ss7ie85eom7" path="res://dev/scenes/gameobjects/player.tscn" id="2_o1kdk"]
@@ -491,7 +491,6 @@ transform = Transform3D(-0.763357, 0, 1.60445, 0, 1.77678, 0, -1.60445, 0, -0.76
 transform = Transform3D(-1.21303, 0, -1.29827, 0, 1.77678, 0, 1.29827, 0, -1.21303, -31.5665, -0.0222573, 98.9556)
 
 [node name="box_pile3" parent="." instance=ExtResource("24_xlckj")]
-transform = Transform3D(-1.70548, 0, -0.498297, 0, 1.77678, 0, 0.498297, 0, -1.70548, -33.1227, -0.0222573, 59.8856)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00686, 0, 13.8608)
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
